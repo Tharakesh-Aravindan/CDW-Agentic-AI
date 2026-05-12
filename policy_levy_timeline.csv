@@ -1,0 +1,12 @@
+date,policy,levy_eur_per_tonne,applies_to,exempts_cdw,source_note,,,
+01-06-2002,Landfill Levy introduced,15,All landfilled waste,TRUE,S.I. No. 86 of 2002. C&D waste exempt at introduction.,,,
+01-07-2008,Landfill Levy increase,20,All landfilled waste,TRUE,Verify exact rate against EPA Comparative Study Table.,,,
+01-06-2009,Landfill Levy increase,30,All landfilled waste,TRUE,Verify against EPA / DECC sources.,,,
+01-09-2011,Landfill Levy increase,50,All landfilled waste,TRUE,Verify rate.,,,
+01-07-2012,Landfill Levy increase,65,All landfilled waste,TRUE,Verify.,,,
+01-07-2013,Landfill Levy increase,75,All landfilled waste,TRUE,Confirmed by Waste Management Regulations 2013 (€10 increase from previous €65).,,,
+01-09-2023,Landfill Levy increase,85,All landfilled waste,TRUE,Waste Management (Landfill Levy) (Amendment) Regulations 2023. C&D still exempt.,,,
+01-09-2023,Waste Recovery Levy introduced,10,"Recovery operations at MSW landfills, WtE plants, co-incinerators, MSW exports",TRUE,Circular Economy (Waste Recovery Levy) Regulations 2023. C&D explicitly exempt.,,,
+01-09-2024,Landfill Levy applied to C&D,10,C&D waste at landfill (concrete, brick, tile, excavation spoil),FALSE,Waste Management (Landfill Levy) (Amendment) Regulations 2024. Lower €10/t rate vs €85/t for non-C&D.
+01-09-2024,Waste Recovery Levy applied to C&D,10,"C&D waste to recovery (concrete, bricks, tiles, glass, plastic, certain soil & stone)",FALSE,"Circular Economy (Waste Recovery Levy) Regulations 2024. Some exemptions: waste wood, pyrite-affected concrete blocks, non-greenfield soil & stone.",,,
+01-09-2025,Review of C&D recovery exemption commitment,,Review point,,Government commitment in Housing for All / 2023 Regulations to review C&D recovery levy exemption status. Outcome to be confirmed.,,,
