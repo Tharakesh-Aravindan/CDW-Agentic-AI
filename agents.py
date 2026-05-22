@@ -1,7 +1,7 @@
 """
 CDW Agentic AI -- Starter Prototype
 -----------------------------------
-A small multi-agent skeleton aligned with the lit review's Opportunity 1:
+A small multi-agent skeleton (for now) aligned with the lit review's Opportunity 1:
 "Develop and empirically evaluate a governed agentic AI architecture
 tailored to construction waste policy tasks."
 
@@ -12,10 +12,10 @@ Design principles (from Aboh & Chuka [16] and Hosseini & Seilani [15]):
     any recommendation that would change a real policy or report.
 
 Agents
-  ComplianceMonitor  -- compares licensee performance to EU/IE targets
-  Forecaster         -- (stub) predicts next-period CDW flows
-  ScenarioEvaluator  -- (stub) runs what-if policy levers
-  PolicyRecommender  -- (stub) synthesises briefs with citations to data
+  ComplianceMonitor  - compares licensee performance to EU/IE targets
+  Forecaster         - (unfinished) predicts next-period CDW flows
+  ScenarioEvaluator  - (unfinished) runs what-if policy levers
+  PolicyRecommender  - (unfinished) synthesises briefs with citations to data
 
 Run:
     export ANTHROPIC_API_KEY=...
@@ -28,6 +28,7 @@ from dataclasses import dataclass, field, asdict
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
+import numpy as np
 import pandas as pd
 
 
@@ -35,9 +36,9 @@ OUT_DIR = Path("./out")
 AUDIT_LOG = OUT_DIR / "audit_log.jsonl"
 
 
-# ---------------------------------------------------------------------------
-# Audit trail -- governance-by-design [16]
-# ---------------------------------------------------------------------------
+# --------------------------------------------------------------------
+# Audit trail - governance-by-design [16]
+# --------------------------------------------------------------------
 def log_event(event: dict[str, Any]) -> None:
     OUT_DIR.mkdir(exist_ok=True)
     event = {"ts": datetime.now(timezone.utc).isoformat(), **event}
@@ -45,9 +46,9 @@ def log_event(event: dict[str, Any]) -> None:
         f.write(json.dumps(event, default=str) + "\n")
 
 
-# ---------------------------------------------------------------------------
+# --------------------------------------------------------------------
 # Shared agent base
-# ---------------------------------------------------------------------------
+# --------------------------------------------------------------------
 @dataclass
 class AgentResult:
     agent: str
@@ -73,9 +74,9 @@ class Agent:
         return result
 
 
-# ---------------------------------------------------------------------------
-# ComplianceMonitor -- working agent
-# ---------------------------------------------------------------------------
+# --------------------------------------------------------------------
+# ComplianceMonitor
+# --------------------------------------------------------------------
 class ComplianceMonitor(Agent):
     name = "ComplianceMonitor"
     scope = (
@@ -133,17 +134,211 @@ class ComplianceMonitor(Agent):
         )
 
 
-# ---------------------------------------------------------------------------
-# Stubs -- to be implemented in subsequent phases
-# ---------------------------------------------------------------------------
+# --------------------------------------------------------------------
+# Unfinished Agents - to be implemented
+# --------------------------------------------------------------------
 class Forecaster(Agent):
-    name = "Forecaster"
-    scope = "Forecast next-period CDW tonnage by material/region. Read-only."
+    """
+    Produces OLS linear-trend forecasts of CDW recovery rate and total accepted
+    tonnage for 1–3 years ahead.
 
-    def run(self, **kwargs) -> AgentResult:
-        # TODO Phase 2: ARIMA / Prophet / gradient-boosting on time-keyed slices
-        return AgentResult(self.name, "ok",
-                           "Stub. Implement with cdw_clean.parquet groupby year.")
+    Design notes:
+      - Phase 2 implementation: replaces stub with working forecasts.
+      - Method: OLS linear trend (numpy.polyfit) with residual-based 95% PI.
+      - Limitation: only 5 annual EPA observations (2021-2025). ARIMA/Prophet
+        require ≥10 points; those are deferred to Phase 3 once the series grows.
+      - Recovery rate is clamped to [0, 1] before output to avoid nonsensical
+        extrapolation beyond the ceiling.
+      - Outputs are saved to out/forecast.csv for downstream agents and audit.
+    """
+
+    name = "Forecaster"
+    scope = (
+        "Produces trend-based forecasts of CDW recovery rate and total accepted "
+        "tonnage for up to 3 years ahead. Read-only. Uses OLS linear extrapolation "
+        "with residual-based prediction intervals. Flags low confidence when "
+        "N < 10 observations. Cannot set targets or recommend enforcement."
+    )
+
+    FORECAST_OUT = OUT_DIR / "forecast.csv"
+    _T95 = 2.0  # conservative ~95% PI multiplier (approximates t-dist for small N)
+
+    def __init__(
+        self,
+        kpi_path: Path = OUT_DIR / "kpi_recovery_rate.csv",
+        cdw_path: Path = OUT_DIR / "cdw_clean.parquet",
+    ):
+        self.kpi = pd.read_csv(kpi_path)
+        self.cdw = pd.read_parquet(cdw_path)
+
+    def _linear_forecast(
+        self,
+        years: np.ndarray,
+        values: np.ndarray,
+        horizon: int,
+        clamp: tuple[float, float] | None = None,
+    ) -> dict:
+        """Fit OLS linear trend and extrapolate `horizon` steps forward.
+
+        Returns slope, intercept, RMSE, and per-year forecast dicts with
+        95% prediction intervals optionally clamped to `clamp=(lo, hi)`.
+        """
+        coeffs = np.polyfit(years, values, 1)
+        fitted = np.polyval(coeffs, years)
+        rmse = float(np.sqrt(np.mean((values - fitted) ** 2)))
+        half_width = self._T95 * rmse
+
+        future_years = np.arange(years[-1] + 1, years[-1] + 1 + horizon)
+        forecasts = []
+        for fy in future_years:
+            raw = float(np.polyval(coeffs, fy))
+            lo = raw - half_width
+            hi = raw + half_width
+            if clamp is not None:
+                raw = float(np.clip(raw, *clamp))
+                lo = float(np.clip(lo, *clamp))
+                hi = float(np.clip(hi, *clamp))
+            forecasts.append({
+                "year": int(fy),
+                "forecast": round(raw, 6),
+                "ci_lo": round(lo, 6),
+                "ci_hi": round(hi, 6),
+            })
+
+        return {
+            "slope": round(float(coeffs[0]), 6),
+            "intercept": round(float(coeffs[1]), 2),
+            "rmse": round(rmse, 6),
+            "n_obs": int(len(years)),
+            "forecasts": forecasts,
+        }
+
+    def run(self, horizon: int = 2, metric: str = "both") -> AgentResult:
+        """
+        Parameters
+        ----------
+        horizon : int, 1–3
+            How many years beyond the last observed year to forecast.
+        metric : str
+            'recovery_rate' | 'cdw_tonnage' | 'both'
+        """
+        if horizon < 1 or horizon > 3:
+            return AgentResult(self.name, "error",
+                               "horizon must be between 1 and 3 years.")
+        if metric not in ("recovery_rate", "cdw_tonnage", "both"):
+            return AgentResult(self.name, "error",
+                               "metric must be 'recovery_rate', 'cdw_tonnage', or 'both'.")
+
+        evidence: list[dict] = []
+        rows_out: list[dict] = []
+        results: dict[str, dict] = {}
+
+        # --- Recovery rate ---------------------------------------------------
+        if metric in ("recovery_rate", "both"):
+            kpi = self.kpi.sort_values("year")
+            years = kpi["year"].to_numpy(dtype=float)
+            rates = kpi["recovery_rate"].to_numpy(dtype=float)
+            res = self._linear_forecast(years, rates, horizon, clamp=(0.0, 1.0))
+            results["recovery_rate"] = res
+            evidence.append({
+                "series": "recovery_rate",
+                "source": "EPA Licensee Waste Data KPIs (2021-2025)",
+                "years_observed": kpi["year"].tolist(),
+                "values_observed": [round(v, 4) for v in rates.tolist()],
+                "slope_per_year": res["slope"],
+                "rmse": res["rmse"],
+                "n_obs": res["n_obs"],
+                "forecasts": res["forecasts"],
+            })
+            for f in res["forecasts"]:
+                rows_out.append({
+                    "metric": "recovery_rate",
+                    "year": f["year"],
+                    "forecast": f["forecast"],
+                    "ci_lo": f["ci_lo"],
+                    "ci_hi": f["ci_hi"],
+                    "method": "OLS linear trend",
+                    "n_obs": res["n_obs"],
+                })
+
+        # --- CDW tonnage -----------------------------------------------------
+        if metric in ("cdw_tonnage", "both"):
+            annual = (
+                self.cdw.groupby("year")["accepted_t"]
+                .sum()
+                .reset_index()
+                .sort_values("year")
+            )
+            years = annual["year"].to_numpy(dtype=float)
+            tonnes = annual["accepted_t"].to_numpy(dtype=float)
+            res = self._linear_forecast(years, tonnes, horizon, clamp=(0.0, None))
+            results["cdw_tonnage"] = res
+            evidence.append({
+                "series": "cdw_tonnage",
+                "source": "EPA Licensee Waste Data CDW (2021-2025)",
+                "years_observed": annual["year"].tolist(),
+                "values_observed": [round(v, 0) for v in tonnes.tolist()],
+                "slope_per_year": res["slope"],
+                "rmse": res["rmse"],
+                "n_obs": res["n_obs"],
+                "forecasts": res["forecasts"],
+            })
+            for f in res["forecasts"]:
+                rows_out.append({
+                    "metric": "cdw_tonnage",
+                    "year": f["year"],
+                    "forecast": f["forecast"],
+                    "ci_lo": f["ci_lo"],
+                    "ci_hi": f["ci_hi"],
+                    "method": "OLS linear trend",
+                    "n_obs": res["n_obs"],
+                })
+
+        # --- Save output -----------------------------------------------------
+        OUT_DIR.mkdir(exist_ok=True)
+        pd.DataFrame(rows_out).to_csv(self.FORECAST_OUT, index=False)
+
+        # --- Build human-readable summary ------------------------------------
+        lines = []
+        if "recovery_rate" in results:
+            r = results["recovery_rate"]
+            slope_pct = r["slope"] * 100
+            preds = ", ".join(
+                f"{f['year']}: {f['forecast']:.1%}" for f in r["forecasts"]
+            )
+            lines.append(
+                f"Recovery rate trend: {slope_pct:+.1f} pp/yr (2021-2025). "
+                f"Forecast → {preds}."
+            )
+        if "cdw_tonnage" in results:
+            t = results["cdw_tonnage"]
+            preds = ", ".join(
+                f"{f['year']}: {f['forecast']:,.0f} t" for f in t["forecasts"]
+            )
+            lines.append(
+                f"CDW tonnage trend: {t['slope']:+,.0f} t/yr (2021-2025). "
+                f"Forecast → {preds}."
+            )
+        n = min(r["n_obs"] for r in results.values())
+        lines.append(
+            f"Note: N={n} years — OLS linear trend only. "
+            "Do not use for policy targets without expert review."
+        )
+
+        # confidence penalised for short series (N=5 → 0.55)
+        confidence = round(max(0.35, 0.55 + 0.04 * max(0, n - 5)), 2)
+
+        return AgentResult(
+            self.name,
+            "ok",
+            summary=" ".join(lines),
+            evidence=evidence,
+            recommendation=(
+                f"Forecasts saved to {self.FORECAST_OUT}. "
+                "Upgrade to ARIMA once ≥10 annual observations are available."
+            ),
+            confidence=confidence,
+        )
 
 
 class ScenarioEvaluator(Agent):
@@ -213,12 +408,13 @@ class PolicyRecommender(Agent):
         )
 
 
-# ---------------------------------------------------------------------------
-# Orchestrator -- enforces the human-in-the-loop gate
-# ---------------------------------------------------------------------------
+# --------------------------------------------------------------------
+# Orchestrator - enforces the human-in-the-loop gate
+# --------------------------------------------------------------------
 class Orchestrator:
     def __init__(self):
         self.compliance = ComplianceMonitor()
+        self.forecaster = Forecaster()
         self.recommender = PolicyRecommender()
 
     def assess_licensee(self, licensee: str, year: int,
@@ -234,20 +430,57 @@ class Orchestrator:
         )
         return out
 
+    def run_forecast(self, horizon: int = 2, metric: str = "both") -> dict:
+        result = self.forecaster(horizon=horizon, metric=metric)
+        out = {
+            "forecast": asdict(result),
+            "governance_note": (
+                "Forecast is advisory. OLS linear trend only — "
+                "review with domain expert before informing policy."
+            ),
+        }
+        return out
 
-# ---------------------------------------------------------------------------
+
+# --------------------------------------------------------------------
 # CLI
-# ---------------------------------------------------------------------------
+# --------------------------------------------------------------------
 if __name__ == "__main__":
     p = argparse.ArgumentParser()
-    p.add_argument("--licensee", required=True)
-    p.add_argument("--year", type=int, required=True)
-    p.add_argument("--brief", action="store_true",
-                   help="Also draft a policy brief (uses Anthropic API)")
-    args = p.parse_args()
+    sub = p.add_subparsers(dest="cmd")
 
+    # compliance sub-command
+    comp_p = sub.add_parser("compliance", help="Assess a licensee's CDW compliance.")
+    comp_p.add_argument("--licensee", required=True)
+    comp_p.add_argument("--year", type=int, required=True)
+    comp_p.add_argument("--brief", action="store_true",
+                        help="Also draft a policy brief (uses Anthropic API)")
+
+    # forecast sub-command
+    fc_p = sub.add_parser("forecast", help="Forecast CDW recovery rate and tonnage.")
+    fc_p.add_argument("--horizon", type=int, default=2,
+                      help="Years to forecast ahead (1–3, default 2)")
+    fc_p.add_argument("--metric", default="both",
+                      choices=["recovery_rate", "cdw_tonnage", "both"])
+
+    # backwards-compat: bare --licensee/--year still works
+    p.add_argument("--licensee")
+    p.add_argument("--year", type=int)
+    p.add_argument("--brief", action="store_true")
+
+    args = p.parse_args()
     orch = Orchestrator()
-    result = orch.assess_licensee(args.licensee, args.year,
-                                   draft_brief=args.brief)
+
+    if args.cmd == "forecast":
+        result = orch.run_forecast(horizon=args.horizon, metric=args.metric)
+    elif args.cmd == "compliance" or args.licensee:
+        licensee = args.licensee
+        year = args.year
+        brief = args.brief
+        result = orch.assess_licensee(licensee, year, draft_brief=brief)
+    else:
+        p.print_help()
+        raise SystemExit(1)
+
     print(json.dumps(result, indent=2, default=str))
     print(f"\nAudit log: {AUDIT_LOG.resolve()}")

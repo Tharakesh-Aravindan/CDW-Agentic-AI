@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 """
 CDW Data Pipeline
 -----------------
@@ -17,7 +19,6 @@ Treatment codes follow EU Waste Framework Directive:
   D-codes = disposal (D1, D5 landfill; D10 incineration without recovery; etc.)
 """
 
-from __future__ import annotations
 import re
 from pathlib import Path
 import pandas as pd
