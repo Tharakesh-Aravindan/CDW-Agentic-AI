@@ -23,7 +23,7 @@ Run:
 """
 
 from __future__ import annotations
-import argparse, json, os
+import argparse, json, os, hashlib
 from dataclasses import dataclass, field, asdict
 from datetime import datetime, timezone
 from pathlib import Path
@@ -34,6 +34,37 @@ import pandas as pd
 
 OUT_DIR = Path("./out")
 AUDIT_LOG = OUT_DIR / "audit_log.jsonl"
+
+# Single place to bump if the agent code changes meaningfully.
+# Logged with every agent action so old audit entries can be traced back
+# to the exact agent version that produced them.
+AGENT_CODE_VERSION = "0.3.0"
+
+
+def file_fingerprint(path: Path) -> dict | None:
+    """Cheap, reproducible fingerprint of a data file.
+
+    Captures size + first-8-bytes-of-SHA1 + last-modified timestamp.
+    Used to record exactly which data file version produced a result, so
+    audit log entries are traceable to the source (per supervisor's
+    request, and addresses the 'agentic AI lacks domain case studies'
+    research gap by demonstrating end-to-end provenance).
+    """
+    p = Path(path)
+    if not p.exists():
+        return None
+    h = hashlib.sha1()
+    with p.open("rb") as f:
+        for chunk in iter(lambda: f.read(65536), b""):
+            h.update(chunk)
+    return {
+        "path": str(p),
+        "size_bytes": p.stat().st_size,
+        "sha1_8": h.hexdigest()[:8],
+        "mtime_utc": datetime.fromtimestamp(
+            p.stat().st_mtime, tz=timezone.utc
+        ).isoformat(),
+    }
 
 
 # --------------------------------------------------------------------
@@ -57,18 +88,34 @@ class AgentResult:
     evidence: list[dict] = field(default_factory=list)
     recommendation: str | None = None
     confidence: float | None = None
+    # Provenance: agent code version, model details, policy parameters, data
+    # source fingerprints. Recorded with every result for traceability.
+    provenance: dict = field(default_factory=dict)
 
 
 class Agent:
     name: str = "agent"
     scope: str = "Define what this agent is and is not allowed to do."
 
+    def provenance(self) -> dict:
+        """Return agent code version + model/policy parameters + data sources.
+
+        Subclasses should override to add their specific model name,
+        hyperparameters, EU/IE policy thresholds, and file fingerprints.
+        """
+        return {"agent_code_version": AGENT_CODE_VERSION}
+
     def run(self, **kwargs) -> AgentResult:
         raise NotImplementedError
 
     def __call__(self, **kwargs) -> AgentResult:
-        log_event({"agent": self.name, "phase": "start", "inputs": kwargs})
+        prov = self.provenance()
+        log_event({"agent": self.name, "phase": "start",
+                   "inputs": kwargs, "provenance": prov})
         result = self.run(**kwargs)
+        # Attach provenance to the result so it surfaces in the JSON output too.
+        if not result.provenance:
+            result.provenance = prov
         log_event({"agent": self.name, "phase": "end",
                    "result": asdict(result)})
         return result
@@ -87,8 +134,56 @@ class ComplianceMonitor(Agent):
 
     EU_TARGET = 0.70
 
-    def __init__(self, scorecard_path: Path = OUT_DIR / "licensee_scorecard.csv"):
+    def __init__(
+        self,
+        scorecard_path: Path = OUT_DIR / "licensee_scorecard.csv",
+        clusters_path: Path = OUT_DIR / "facility_clusters.csv",
+    ):
         self.df = pd.read_csv(scorecard_path)
+        # Optional ML enrichment: behavioural archetype + anomaly flag from
+        # facility_analysis.py. Loaded if present; the agent degrades
+        # gracefully (no ML fields) if the file hasn't been generated yet.
+        self.clusters = None
+        if Path(clusters_path).exists():
+            self.clusters = pd.read_csv(clusters_path)
+
+    def _ml_context(self, licensee: str, year: int) -> dict | None:
+        """Return the ML archetype + anomaly status for a facility-year, if available."""
+        if self.clusters is None:
+            return None
+        rows = self.clusters[
+            (self.clusters["licensee"] == licensee)
+            & (self.clusters["year"] == year)
+        ]
+        if rows.empty:
+            return None
+        c = rows.iloc[0]
+        return {
+            "archetype": str(c.get("archetype", "")),
+            "is_anomaly": bool(c.get("is_anomaly", False)),
+            "anomaly_score": float(c.get("anomaly_score", 0.0)),
+        }
+
+    def provenance(self) -> dict:
+        return {
+            "agent_code_version": AGENT_CODE_VERSION,
+            "policy_parameters": {
+                "eu_wfd_recovery_target": self.EU_TARGET,
+                "policy_basis": "EU Waste Framework Directive 2008/98/EC, "
+                                "Article 11(2)(b): 70% non-hazardous CDW "
+                                "recovery target by 2020",
+            },
+            "model": {
+                "name": "rule_based_threshold",
+                "ml_enrichment": "facility_analysis.py (KMeans k=5 + "
+                                 "IsolationForest contamination=0.05)"
+                                 if self.clusters is not None else "none",
+            },
+            "data_sources": {
+                "scorecard": file_fingerprint(OUT_DIR / "licensee_scorecard.csv"),
+                "clusters": file_fingerprint(OUT_DIR / "facility_clusters.csv"),
+            },
+        }
 
     def run(self, licensee: str, year: int) -> AgentResult:
         rows = self.df[(self.df["licensee"] == licensee)
@@ -108,27 +203,54 @@ class ComplianceMonitor(Agent):
             "other_t": float(r.get("other", 0) or 0),
             "recovery_rate": None if pd.isna(rate) else float(rate),
         }]
+
+        # --- ML enrichment: behavioural archetype + anomaly flag ----------
+        ml = self._ml_context(licensee, year)
+        ml_note = ""
+        if ml is not None:
+            evidence.append({
+                "source": "Facility ML analysis (KMeans + IsolationForest)",
+                "behavioural_archetype": ml["archetype"],
+                "anomaly_flagged": ml["is_anomaly"],
+                "anomaly_score": round(ml["anomaly_score"], 4),
+            })
+            if ml["is_anomaly"]:
+                ml_note = (
+                    f" ML flag: behaviour is anomalous for {year} "
+                    f"(archetype '{ml['archetype']}') and warrants review."
+                )
+            else:
+                ml_note = f" ML archetype: {ml['archetype']}."
+
         if pd.isna(rate):
             return AgentResult(
                 self.name, "needs_review",
                 summary=("All accepted CDW classified as 'other' (R12/R13 "
                          "prep/storage). Final outcome cannot be inferred "
-                         "from on-site treatment alone."),
+                         "from on-site treatment alone." + ml_note),
                 evidence=evidence,
                 recommendation=("Request final-destination treatment data "
                                 "from licensee for the year."),
                 confidence=0.4,
             )
         meets = rate >= self.EU_TARGET
+        # An anomaly flag downgrades an otherwise-compliant facility to review.
+        anomaly = ml is not None and ml["is_anomaly"]
+        status = "ok" if (meets and not anomaly) else "needs_review"
         return AgentResult(
             self.name,
-            "ok" if meets else "needs_review",
+            status,
             summary=(f"{licensee} achieved {rate:.1%} recovery in {year}; "
-                     f"{'meets' if meets else 'BELOW'} the EU 70% target."),
+                     f"{'meets' if meets else 'BELOW'} the EU 70% target."
+                     + ml_note),
             evidence=evidence,
-            recommendation=None if meets else (
-                "Flag for follow-up: investigate disposal share, "
-                "request remediation plan, consider in next inspection cycle."
+            recommendation=(
+                None if (meets and not anomaly) else (
+                    "Flag for follow-up: investigate disposal share, "
+                    "request remediation plan, consider in next inspection cycle."
+                    + (" Anomaly detected by ML — prioritise in review queue."
+                       if anomaly else "")
+                )
             ),
             confidence=0.85,
         )
@@ -168,8 +290,31 @@ class Forecaster(Agent):
         kpi_path: Path = OUT_DIR / "kpi_recovery_rate.csv",
         cdw_path: Path = OUT_DIR / "cdw_clean.parquet",
     ):
+        self.kpi_path = Path(kpi_path)
+        self.cdw_path = Path(cdw_path)
         self.kpi = pd.read_csv(kpi_path)
         self.cdw = pd.read_parquet(cdw_path)
+
+    def provenance(self) -> dict:
+        return {
+            "agent_code_version": AGENT_CODE_VERSION,
+            "model": {
+                "name": "OLS_linear_trend",
+                "library": "numpy.polyfit (deg=1)",
+                "prediction_interval": "residual-based, "
+                                       f"95% via t-multiplier T95={self._T95}",
+                "recovery_rate_clamp": "[0.0, 1.0]",
+                "tonnage_clamp": "[0.0, +inf)",
+                "upgrade_path": "ARIMA once n_obs >= 10",
+            },
+            "policy_parameters": {
+                "horizon_max_years": 3,
+            },
+            "data_sources": {
+                "kpi": file_fingerprint(self.kpi_path),
+                "cdw_clean": file_fingerprint(self.cdw_path),
+            },
+        }
 
     def _linear_forecast(
         self,
