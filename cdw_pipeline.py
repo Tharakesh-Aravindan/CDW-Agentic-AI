@@ -24,6 +24,7 @@ from pathlib import Path
 import pandas as pd
 
 PROJECT_DIR = Path(".")
+DATA_DIR = PROJECT_DIR / "data"
 EPA_YEARS = [2021, 2022, 2023, 2024, 2025]
 
 
@@ -65,7 +66,7 @@ def classify_treatment(code_str: str) -> str:
 def load_epa() -> pd.DataFrame:
     frames = []
     for y in EPA_YEARS:
-        path = PROJECT_DIR / f"EPA-Licensee-Waste-Data-{y}.xlsx"
+        path = DATA_DIR / f"EPA-Licensee-Waste-Data-{y}.xlsx"
         df = pd.read_excel(path, sheet_name=f"Reporting Year {y}")
         frames.append(df)
     df = pd.concat(frames, ignore_index=True)
@@ -114,7 +115,7 @@ def epa_cdw(df_epa: pd.DataFrame) -> pd.DataFrame:
 # CSO loader
 # ---------------------------------------------------------------------------
 def load_cso_generation() -> pd.DataFrame:
-    df = pd.read_csv(PROJECT_DIR / "waste.csv")
+    df = pd.read_csv(DATA_DIR / "waste.csv")
     df = df.rename(columns={
         "Year": "year",
         "NACE Rev. 2 Activity": "nace",
@@ -126,7 +127,7 @@ def load_cso_generation() -> pd.DataFrame:
 
 
 def load_cso_treatment() -> pd.DataFrame:
-    df = pd.read_csv(PROJECT_DIR / "waste_treated.csv")
+    df = pd.read_csv(DATA_DIR / "waste_treated.csv")
     df = df.rename(columns={
         "Year": "year",
         "Hazardousness": "hazardousness",
