@@ -1,0 +1,6 @@
+cluster,recovery_share,disposal_share,other_share,backfill_share,hazardous_share,total_accepted_t,n_low_codes,n_records,n_facility_years,archetype
+0,0.985,0.008,0.006,0.002,0.04,68460.015,2.703,5.585,118,Recycler/Recovery
+1,0.016,0.005,0.979,0.004,0.014,34329.711,8.68,16.817,153,Transfer/storage
+2,0.997,0.003,0.0,0.994,0.022,231842.499,1.717,11.804,46,Recycler/Recovery
+3,0.012,0.964,0.018,0.003,0.374,117853.785,3.3,14.875,40,Disposal/Landfill
+4,0.005,0.0,0.797,0.0,0.075,953.423,2.435,3.98,147,Small transfer/storage

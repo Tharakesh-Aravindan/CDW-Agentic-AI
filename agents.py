@@ -1,25 +1,30 @@
 """
-CDW Agentic AI -- Starter Prototype
------------------------------------
-A small multi-agent skeleton (for now) aligned with the lit review's Opportunity 1:
-"Develop and empirically evaluate a governed agentic AI architecture
-tailored to construction waste policy tasks."
+CDW Agentic AI - Governed Multi-Agent Prototype
+------------------------------------------------
+A governed multi-agent system built against Opportunity 1 from our literature
+review: to develop and empirically evaluate a governed agentic AI architecture
+for construction and demolition waste policy tasks.
 
-Design principles (from Aboh & Chuka [16] and Hosseini & Seilani [15]):
-  - Bounded autonomy: each agent has an explicit scope and tools.
-  - Audit trail: every recommendation logs its inputs and reasoning.
-  - Human-in-the-loop: the Orchestrator requires approval before acting on
-    any recommendation that would change a real policy or report.
+The design rests on three principles drawn from Aboh & Chuka [16] and
+Hosseini & Seilani [15]:
+  - Bounded autonomy: each agent declares an explicit scope, and the
+    orchestrator refuses requests that fall outside it.
+  - Audit trail: every agent action logs its inputs, its reasoning, and full
+    provenance (code version, model spec, policy basis, data fingerprints).
+  - Human-in-the-loop: no agent can act autonomously; the orchestrator routes
+    every recommendation for human approval before any real-world effect.
 
-Agents
-  ComplianceMonitor  - compares licensee performance to EU/IE targets
-  Forecaster         - (unfinished) predicts next-period CDW flows
-  ScenarioEvaluator  - (unfinished) runs what-if policy levers
-  PolicyRecommender  - (unfinished) synthesises briefs with citations to data
+Agents:
+  ComplianceMonitor  - compares licensee performance to the EU/IE 70% target,
+                       with ML clustering and anomaly detection feeding its verdict
+  Forecaster         - projects near-term CDW recovery and tonnage, with honest
+                       confidence bounds under sparse data
+  ScenarioEvaluator  - scoped as future work (policy what-if analysis)
+  PolicyRecommender  - scoped as future work (LLM-drafted policy briefs)
 
-Run:
-    export ANTHROPIC_API_KEY=...
-    python agents.py --licensee "Ashgrove Recycling - W0147" --year 2024
+Run Command:
+    python agents.py compliance --licensee "Ashgrove Recycling - W0147" --year 2024
+    python agents.py forecast --horizon 2
 """
 
 from __future__ import annotations
@@ -44,7 +49,7 @@ AGENT_CODE_VERSION = "0.3.0"
 def file_fingerprint(path: Path) -> dict | None:
     """Cheap, reproducible fingerprint of a data file.
 
-    Captures size + first-8-bytes-of-SHA1 + last-modified timestamp.
+    Captures size + first-8-bytes-of-SHA256 + last-modified timestamp.
     Used to record exactly which data file version produced a result, so
     audit log entries are traceable to the source (per supervisor's
     request, and addresses the 'agentic AI lacks domain case studies'
@@ -53,14 +58,14 @@ def file_fingerprint(path: Path) -> dict | None:
     p = Path(path)
     if not p.exists():
         return None
-    h = hashlib.sha1()
+    h = hashlib.sha256()
     with p.open("rb") as f:
         for chunk in iter(lambda: f.read(65536), b""):
             h.update(chunk)
     return {
         "path": str(p),
         "size_bytes": p.stat().st_size,
-        "sha1_8": h.hexdigest()[:8],
+        "sha256_16": h.hexdigest()[:16],
         "mtime_utc": datetime.fromtimestamp(
             p.stat().st_mtime, tz=timezone.utc
         ).isoformat(),
@@ -82,6 +87,13 @@ def log_event(event: dict[str, Any]) -> None:
 # --------------------------------------------------------------------
 @dataclass
 class AgentResult:
+    """A structured result returned by every agent.
+
+    Carries the agent name, a status (ok / needs_review / error), a
+    human-readable summary, an optional confidence score, and the provenance
+    block. Crucially, there is no 'approved' status: approval is something a
+    human grants to a result, never something an agent assigns to itself.
+    """
     agent: str
     status: str                 # "ok" | "needs_review" | "error"
     summary: str
@@ -94,6 +106,13 @@ class AgentResult:
 
 
 class Agent:
+    """Base class for all agents.
+
+    Defines the shared machinery every agent inherits: an explicit scope, a
+    provenance record, and automatic audit logging on each call. Subclasses
+    implement run(); they cannot return a result without the base class also
+    writing start and end entries to the audit log.
+    """
     name: str = "agent"
     scope: str = "Define what this agent is and is not allowed to do."
 
@@ -125,6 +144,15 @@ class Agent:
 # ComplianceMonitor
 # --------------------------------------------------------------------
 class ComplianceMonitor(Agent):
+    """Assesses whether a facility-year meets the EU 70% recovery target.
+
+    The verdict is enriched with unsupervised ML: the clustering assigns each
+    facility-year a behavioural archetype, and the Isolation Forest anomaly
+    flag can downgrade an otherwise-compliant facility to needs_review. The
+    agent does not merely report the ML output alongside its verdict - it uses
+    that output to adjust the verdict, so unusual behaviour is surfaced for
+    human review even when no formal rule has been broken.
+    """
     name = "ComplianceMonitor"
     scope = (
         "Read-only assessment of whether a CDW licensee meets the EU "
@@ -248,7 +276,7 @@ class ComplianceMonitor(Agent):
                 None if (meets and not anomaly) else (
                     "Flag for follow-up: investigate disposal share, "
                     "request remediation plan, consider in next inspection cycle."
-                    + (" Anomaly detected by ML — prioritise in review queue."
+                    + (" Anomaly detected by ML - prioritise in review queue."
                        if anomaly else "")
                 )
             ),
@@ -257,21 +285,19 @@ class ComplianceMonitor(Agent):
 
 
 # --------------------------------------------------------------------
-# Unfinished Agents - to be implemented
+# Forecaster Agent
 # --------------------------------------------------------------------
 class Forecaster(Agent):
-    """
-    Produces OLS linear-trend forecasts of CDW recovery rate and total accepted
-    tonnage for 1–3 years ahead.
+    """Projects CDW recovery rate and total accepted tonnage 1–3 years ahead.
 
-    Design notes:
-      - Phase 2 implementation: replaces stub with working forecasts.
-      - Method: OLS linear trend (numpy.polyfit) with residual-based 95% PI.
-      - Limitation: only 5 annual EPA observations (2021-2025). ARIMA/Prophet
-        require ≥10 points; those are deferred to Phase 3 once the series grows.
-      - Recovery rate is clamped to [0, 1] before output to avoid nonsensical
-        extrapolation beyond the ceiling.
-      - Outputs are saved to out/forecast.csv for downstream agents and audit.
+    Uses an OLS linear trend (numpy.polyfit) with residual-based 95%
+    prediction intervals. Outputs are clamped to physically meaningful ranges
+    (recovery rate to [0, 1]) to avoid nonsensical extrapolation. With only
+    five annual observations (2021–2025), the agent reports a modest
+    confidence and recommends upgrading to ARIMA once ten or more points are
+    available - encoding the principle that an agent should represent the
+    limits of its own knowledge rather than project false certainty. Forecasts
+    are saved to out/forecast.csv for downstream use and audit.
     """
 
     name = "Forecaster"
@@ -466,7 +492,7 @@ class Forecaster(Agent):
             )
         n = min(r["n_obs"] for r in results.values())
         lines.append(
-            f"Note: N={n} years — OLS linear trend only. "
+            f"Note: N={n} years - OLS linear trend only. "
             "Do not use for policy targets without expert review."
         )
 
@@ -487,20 +513,35 @@ class Forecaster(Agent):
 
 
 class ScenarioEvaluator(Agent):
+    """Scoped as future work.
+
+    Would quantify the behavioural impact of dated policy interventions by
+    comparing facility recovery rates before and after each event. Deferred
+    because the post-intervention observation window is currently too short
+    for credible dynamic analysis (see paper, Section VI-C). The agent
+    inherits the same scope, audit, and approval machinery as the operational
+    agents, so only its internal logic remains to be implemented.
+    """
     name = "ScenarioEvaluator"
     scope = ("Evaluate hypothetical policy levers (e.g. landfill levy +X%, "
              "mandatory pre-demolition audit). Returns delta vs baseline.")
 
     def run(self, **kwargs) -> AgentResult:
-        # TODO Phase 3: system-dynamics model inspired by Ding et al. [6]
-        return AgentResult(self.name, "ok", "Stub.")
+        # Scoped as future work - see paper Section VI-C. The system-dynamics
+        # approach would follow Ding et al. [6].
+        return AgentResult(self.name, "error",
+                           "ScenarioEvaluator is scoped as future work; "
+                           "not implemented in this version.")
 
 
 class PolicyRecommender(Agent):
-    """
-    Uses Claude to synthesise the upstream agents' findings into a draft
-    policy brief. Outputs are NEVER auto-published -- they require human
-    approval, in line with governance-by-design [16].
+    """Scoped as future work.
+
+    Would use a large language model to synthesise the upstream agents'
+    findings into a draft policy brief. Every generated brief would carry the
+    needs_review status and could never be auto-published - it would require
+    human approval, in line with governance-by-design [16]. Deferred because
+    its value depends on the ScenarioEvaluator's outputs as input.
     """
     name = "PolicyRecommender"
     scope = ("Drafts policy briefs. Cannot execute, send, or publish. "
@@ -557,6 +598,14 @@ class PolicyRecommender(Agent):
 # Orchestrator - enforces the human-in-the-loop gate
 # --------------------------------------------------------------------
 class Orchestrator:
+    """Coordinates the agents and enforces the human-in-the-loop gate.
+
+    Routes each request to the appropriate agent, sequences their execution,
+    and packages the outputs into a single result that always carries a
+    governance note (recommendations are advisory only) and an audit-log
+    reference. This is what makes the components a coordinated, governed
+    multi-agent system rather than a set of isolated scripts.
+    """
     def __init__(self):
         self.compliance = ComplianceMonitor()
         self.forecaster = Forecaster()
@@ -580,7 +629,7 @@ class Orchestrator:
         out = {
             "forecast": asdict(result),
             "governance_note": (
-                "Forecast is advisory. OLS linear trend only — "
+                "Forecast is advisory. OLS linear trend only - "
                 "review with domain expert before informing policy."
             ),
         }

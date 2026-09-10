@@ -1,21 +1,22 @@
 """
 sparsity_robustness.py
 ======================
-Multi-seed robustness check for the data-availability degradation experiment.
+A multi-seed robustness check for the data-availability degradation experiment.
 
-Suman's notebook ran the sparsity experiment once with a fixed random seed.
-At low data-availability levels (e.g. 25%), the training set shrinks to only
-2-3 samples after feature engineering, which makes any single result highly
-sensitive to the random seed. This script re-runs the experiment across 10
-seeds (0-9) and reports the MEDIAN MAPE and inter-quartile range (IQR) per
-model per availability level, so we can distinguish a robust finding from a
-lucky single run.
+The original forecasting notebook ran the sparsity analysis once with a single
+fixed seed. At low availability levels (for example 25%), the training set
+shrinks to only two or three samples after feature engineering, which makes any
+single result highly sensitive to the random seed. To test whether the striking
+low-data accuracy was genuine or just a lucky draw, this script repeats the
+experiment across ten seeds (0-9) and reports the MEDIAN MAPE together with the
+inter-quartile range (IQR) for every model at every availability level.
 
-Input : out/annual_cdw_series.csv   (produced by the forecasting notebook)
-Output: out/sparsity_robustness.csv (median + IQR per model per level)
+Input : out/annual_cdw_series.csv   (from the forecasting notebook)
+Output: out/sparsity_robustness.csv       (median + IQR per model per level)
+        out/sparsity_robustness_raw.csv    (raw per-seed results)
         out/sparsity_robustness_plot.png
 
-Run:  python sparsity_robustness.py
+Run Command:  python sparsity_robustness.py
 """
 
 import numpy as np
@@ -88,18 +89,15 @@ def make_features(df: pd.DataFrame) -> pd.DataFrame:
     return d
 
 
-    # ---------------------------------------------------------------------------
+# ---------------------------------------------------------------------------
 # Model wrappers
 # ---------------------------------------------------------------------------
-# Each wrapper takes:
-#   train_df : the training rows (already feature-engineered)
-#   target_features : the feature row for the year we want to predict
-#   seed : random seed for reproducibility / robustness testing
-# and returns a single predicted VALUE (float).
-#
-# Injecting `seed` into every model is what makes the robustness check
-# possible: the same train/predict call with a different seed gives a
-# different result, and we measure how much that variation matters.
+# Every wrapper takes the same three arguments - the feature-engineered
+# training rows, the feature row for the year being predicted, and a random
+# seed - and returns a single predicted value. Passing the seed into each model
+# is what makes the robustness check meaningful: running the same model with a
+# different seed can give a different answer, and the experiment measures how
+# much that variation actually matters at each data-availability level.
 
 from sklearn.metrics import mean_absolute_percentage_error
 
@@ -330,7 +328,7 @@ def summarise(results):
 
     For each (model, availability) we report across the SEEDS:
       median MAPE, 25th percentile (q1), 75th percentile (q3),
-      and IQR = q3 - q1 (the spread — the whole point of the seed sweep).
+      and IQR = q3 - q1 (the spread - the whole point of the seed sweep).
     """
     grouped = results.groupby(["model", "availability_pct"])["mape"]
     summary = grouped.agg(
@@ -369,7 +367,7 @@ def plot_results(summary, path=OUT_DIR / "sparsity_robustness_plot.png"):
             ax.fill_between(x, q1, q3, alpha=0.15, color=line.get_color())
 
     ax.set_xlabel("Training-data availability (%)")
-    ax.set_ylabel("MAPE (%)  —  median across 10 seeds")
+    ax.set_ylabel("MAPE (%)  -  median across 10 seeds")
     ax.set_title("Forecasting robustness under data-availability degradation\n"
                  "(median MAPE, shaded bands = inter-quartile range)")
     ax.set_xticks([25, 50, 75, 100])

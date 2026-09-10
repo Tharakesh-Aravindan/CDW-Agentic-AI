@@ -1,47 +1,44 @@
 """
 Facility-Level ML Analysis for CDW Licensees
 ============================================
-Unsupervised machine-learning module that restructures the cleaned CDW
-record-level data into FACILITY-YEAR observations and applies:
+An unsupervised machine-learning module that reshapes the cleaned record-level 
+CDW data into facility-year observations and applies two techniques:
 
-  1. K-Means clustering  -> discovers behavioural archetypes of waste
-     facilities (true recyclers, landfills, transfer stations, ...),
-     with k selected by silhouette score (not chosen arbitrarily).
+  1. K-Means clustering - groups facilities into behavioural archetypes
+     (genuine recyclers, landfills, transfer stations, etc)
+     k is chosen using silhouette score rather than picked arbitrarily.
 
-  2. Isolation Forest    -> flags anomalous facility-years (facilities
-     behaving unusually for their type / changing sharply year-to-year),
-     which feeds the ComplianceMonitor agent's review queue.
+  2. Isolation Forest - flags anomalous facility-years (facilities behaving
+     unusually for their archetype, or shifting between years), which
+     then feed the ComplianceMonitor agent's review queue.
 
-Why facility-year units?
-  The record-level table has ~4,955 rows but only 118 facilities. Collapsed
-  to annual national totals it is just 5 points. The honest unit of analysis
-  for behavioural ML is the FACILITY-YEAR: each facility's behaviour in each
-  reporting year. This yields ~500 observations with engineered features --
-  a defensible sample size for unsupervised learning.
+Reason for facility-year units:
+  The record table holds up to 4,955 rows but only 118 distinct facilities;
+  collapsed to annual national totals it is only five points. The honest unit
+  of analysis for behavioural ML is the facility-year which is how each
+  facility behaved in each reporting year, which gives up to 500 observations
+  with engineered features, a decent sample size for unsupervised learning.
 
-Methodological notes (for the dissertation):
-  - Features are engineered from the pipeline's `effective_tier` so the ML
-    is consistent with the pipeline's treatment-classification choices
-    (including backfilling counted as recovery, R12/R13 as 'other').
-  - Tonnage is log-transformed (log1p) because it spans 0 to ~1.5M tonnes.
-  - Clustering uses standardised features; k chosen by silhouette score.
-  - There is repeated-measures structure (a facility appears up to 5 times).
-    This is acceptable for clustering (each facility-year is a legitimate
-    behavioural snapshot) but any future SUPERVISED model must split
-    train/test BY FACILITY to avoid leakage.
+Notes:
+  - Features are derived from the pipeline's effective_tier, keeping ML
+    consistent with the pipeline's treatment classification choices (backfilling
+    counted as recovery, R12/R13 as 'other').
+  - Tonnage is log-transformed (log1p) because it spans 0 to over 1.5M tonnes.
+  - Clustering uses standardised features, k is chosen by silhouette score.
+  - The data has repeated measure structure (a facility appears up to five
+    times). Fine for clustering, but any supervised model must split
+    train/test by facility to avoid leakage, as implemented in
+    facility_classifier.py.
 
-Inputs
-  out/cdw_clean.parquet   (produced by cdw_pipeline.py)
+Inputs:  out/cdw_clean.parquet   (from cdw_pipeline.py)
+Outputs (to out/):
+  facility_year_features.csv   - the engineered facility-year table
+  facility_clusters.csv        - facility-year + cluster label + anomaly flag
+  cluster_profiles.csv         - mean feature values per cluster
+  silhouette_scores.csv        - k-selection evidence
 
-Outputs (written to out/)
-  facility_year_features.csv   -- the engineered facility-year table
-  facility_clusters.csv        -- facility-year + cluster label + anomaly flag
-  cluster_profiles.csv         -- mean feature values per cluster (for writeup)
-  silhouette_scores.csv        -- k-selection evidence (for writeup)
-
-Run:
+Run Command:
   python facility_analysis.py
-  python facility_analysis.py --k 4 --contamination 0.05
 """
 
 from __future__ import annotations

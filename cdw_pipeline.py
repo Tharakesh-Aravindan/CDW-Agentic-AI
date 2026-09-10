@@ -2,21 +2,29 @@ from __future__ import annotations
 
 """
 CDW Data Pipeline
------------------
-Unifies the two data sources you have into a single tidy dataset focused on
-construction & demolition waste (CDW), with derived indicators the agents
-will reason over.
+=================
+Ingests and cleans Ireland's construction and demolition (C&D) waste data,
+then computes the compliance KPIs the agents consume.
 
-Sources
-  1. EPA Licensee Waste Data (2021-2025) -- facility-level, granular
-  2. CSO Waste Generation by NACE (2004-2020) -- national, sector-wide
+Steps:
+  1. Load the five EPA Licensee annual returns (2021–2025) and filter to
+     List-of-Waste chapter 17 (C&D), producing the cleaned record-level table.
+  2. Classify each record's treatment into recovery / disposal / other tiers,
+     following the EU R/D taxonomy (backfilling counted as recovery, R12/R13
+     as 'other' since their final fate is unrecorded).
+  3. Compute annual recovery rates against the EU 70% target and build the
+     per-facility-year scorecard.
+  4. Load the CSO national series for long-run context.
 
-CDW is identified by LoW (List of Waste) Chapter 17 in the EPA data
-and by NACE sector F (Construction) in the CSO data.
+Inputs:  data/EPA-Licensee-Waste-Data-2021..2025.xlsx, data/waste.csv,
+         data/waste_treated.csv
+Outputs (to out/):
+  cdw_clean.parquet        - cleaned record-level CDW data
+  kpi_recovery_rate.csv    - annual recovery rates vs the 70% target
+  licensee_scorecard.csv   - per-facility-year recovery scorecard
 
-Treatment codes follow EU Waste Framework Directive:
-  R-codes = recovery (R1 energy, R2-R11 recycling/reuse, R12-R13 prep/storage)
-  D-codes = disposal (D1, D5 landfill; D10 incineration without recovery; etc.)
+Run Command:
+  python cdw_pipeline.py
 """
 
 import re

@@ -1,0 +1,5 @@
+metric,year,forecast,ci_lo,ci_hi,method,n_obs
+recovery_rate,2026,1.0,0.893159,1.0,OLS linear trend,5
+recovery_rate,2027,1.0,0.952903,1.0,OLS linear trend,5
+cdw_tonnage,2026,5774191.38518,5146517.968016,6401864.802344,OLS linear trend,5
+cdw_tonnage,2027,5775602.71132,5147929.294156,6403276.128484,OLS linear trend,5

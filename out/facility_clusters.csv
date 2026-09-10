@@ -1,0 +1,505 @@
+licensee,year,total_accepted_t,n_records,n_low_codes,recovery_share,disposal_share,other_share,backfill_share,hazardous_share,recovery_rate,cluster,anomaly_score,is_anomaly,archetype
+Ashgrove Recycling - W0147,2021,6471.860000000001,26.0,13.0,0.0,0.0,1.0,0.0,0.0,,1,0.13007650979080365,False,Transfer/storage
+Ashgrove Recycling - W0147,2022,7201.27,32.0,12.0,0.0,0.0,1.0,0.0,0.0,,1,0.12039763433295253,False,Transfer/storage
+Ashgrove Recycling - W0147,2023,5496.0,24.0,14.0,0.30314410480349346,0.0,0.6968558951965066,0.30314410480349346,0.0,1.0,1,-0.06485111617093842,True,Transfer/storage
+Ashgrove Recycling - W0147,2024,7915.320000000001,24.0,14.0,0.0,0.28205050459109676,0.7179494954089032,0.0,0.0,0.0,1,-0.00014101674593625102,True,Transfer/storage
+Ashgrove Recycling - W0147,2025,8716.06,22.0,12.0,0.0,0.26135891675826006,0.73864108324174,0.0,0.0,0.0,1,0.03456557757646195,False,Transfer/storage
+Athy Civic Amenity Centre - W0175,2023,12.66,2.0,1.0,0.0,0.0,1.0,0.0,0.0,,4,0.1887575057818564,False,Small transfer/storage
+Athy Civic Amenity Centre - W0175,2024,44.0,2.0,2.0,0.0,0.0,1.0,0.0,0.0,,4,0.19683016354191274,False,Small transfer/storage
+Athy Civic Amenity Centre - W0175,2025,37.410000000000004,5.0,4.0,0.0,0.0,1.0,0.0,0.0,,4,0.1944749814765846,False,Small transfer/storage
+Ballaghveny Landfill - W0078,2021,6805.01,4.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,3,0.11152953361931062,False,Disposal/Landfill
+Ballaghveny Landfill - W0078,2022,31060.880000000005,4.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,3,0.1133498797494214,False,Disposal/Landfill
+Ballaghveny Landfill - W0078,2023,16913.36,3.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,3,0.11632347999229731,False,Disposal/Landfill
+Ballaghveny Landfill - W0078,2024,22680.54,7.0,2.0,0.0,0.7286572541923605,0.0,0.0,0.0,0.0,3,0.09377713986309211,False,Disposal/Landfill
+Ballaghveny Landfill - W0078,2025,4062.54,3.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,3,0.10191356083735847,False,Disposal/Landfill
+Ballymount Baling Station - W0003,2021,4667.12,6.0,2.0,0.0,0.0,1.0,0.0,0.0,,4,0.21243057426528156,False,Small transfer/storage
+Ballymount Baling Station - W0003,2022,4344.72,4.0,2.0,0.0,0.0,1.0,0.0,0.0,,4,0.20800130185044624,False,Small transfer/storage
+Ballymount Baling Station - W0003,2023,5145.97,4.0,2.0,0.0,0.0,1.0,0.0,0.0,,4,0.20800130185044624,False,Small transfer/storage
+Ballymount Baling Station - W0003,2024,5873.650000000001,4.0,2.0,0.0,0.0,1.0,0.0,0.0,,4,0.20589746296401829,False,Small transfer/storage
+Ballymount Baling Station - W0003,2025,5819.02,6.0,3.0,0.0,0.0,1.0,0.0,0.0,,4,0.21708233640839802,False,Small transfer/storage
+Ballynagran Residual Landfill - W0165,2021,21340.2,18.0,3.0,0.9414532197448947,0.05854678025510539,0.0,0.04213643733423304,0.0,0.9414532197448946,0,0.08442617608004599,False,Recycler/Recovery
+Ballynagran Residual Landfill - W0165,2022,21004.96,13.0,2.0,0.998952628331594,0.0010473716684059385,0.0,0.998952628331594,0.0,0.998952628331594,2,0.08888184562510637,False,Recycler/Recovery
+Ballynagran Residual Landfill - W0165,2023,9085.7,9.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.17557012451001341,False,Recycler/Recovery
+Ballynagran Residual Landfill - W0165,2024,3476.92,2.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,2,0.13321517680145856,False,Recycler/Recovery
+Ballynagran Residual Landfill - W0165,2025,4133.34,5.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,2,0.1039916818095113,False,Recycler/Recovery
+Ballyogan Landfill Facility Ballyogan Recycling Park - W0015,2021,10.0,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.17123665351002632,False,Recycler/Recovery
+Ballyogan Landfill Facility Ballyogan Recycling Park - W0015,2022,18.62,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.1754691783944176,False,Recycler/Recovery
+Ballyogan Landfill Facility Ballyogan Recycling Park - W0015,2023,14.48,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.1742002211131331,False,Recycler/Recovery
+Ballyogan Landfill Facility Ballyogan Recycling Park - W0015,2024,14.52,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.1742002211131331,False,Recycler/Recovery
+Ballyogan Landfill Facility Ballyogan Recycling Park - W0015,2025,19.82,2.0,1.0,0.0,0.0,1.0,0.0,0.0,,4,0.1924726499036703,False,Small transfer/storage
+Blackhall Soil Recovery Facility - W0247,2022,88753.0,3.0,3.0,0.0,1.0,0.0,0.0,0.0,0.0,3,0.09143729933997491,False,Disposal/Landfill
+Blackhall Soil Recovery Facility - W0247,2025,46962.0,5.0,3.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.19862581585282507,False,Recycler/Recovery
+Blancomet Recycling IE Limited - P1115,2022,180.433,16.0,5.0,0.9185847378251207,0.0,0.08141526217487932,0.0,0.0,1.0,0,0.08839773751599012,False,Recycler/Recovery
+Blancomet Recycling IE Limited - P1115,2023,265.06399999999996,12.0,5.0,0.9133643195605591,0.0,0.08663568043944105,0.0,0.0,1.0,0,0.08530065189392666,False,Recycler/Recovery
+Blancomet Recycling IE Limited - P1115,2024,363.427,20.0,5.0,0.8933513470380571,0.0,0.10664865296194283,0.0,0.0,1.0,0,0.0743288170168177,False,Recycler/Recovery
+Blancomet Recycling IE Limited - P1115,2025,566.0730000000001,17.0,7.0,0.8389801315378052,0.0,0.1610198684621948,0.0,0.0,1.0,0,0.04733334208672024,False,Recycler/Recovery
+Boliden Tara Mines Limited - P0516,2021,15555.0,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.21450093909487,False,Recycler/Recovery
+Boliden Tara Mines Limited - P0516,2022,334632.0,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.1913346555343597,False,Recycler/Recovery
+Boliden Tara Mines Limited - P0516,2023,164158.0,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.19951660807763555,False,Recycler/Recovery
+Boliden Tara Mines Limited - P0516,2025,46639.0,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.20912023231846277,False,Recycler/Recovery
+Bord Na Móna Recycling Limited - W0104,2021,98.35,5.0,4.0,0.0,0.0,1.0,0.0,0.0,,4,0.20355879159277762,False,Small transfer/storage
+Bord Na Móna Recycling Limited - W0104,2022,105.82,4.0,2.0,0.0,0.0,1.0,0.0,0.0,,4,0.21016229720649804,False,Small transfer/storage
+Bord Na Móna Recycling Limited - W0104,2023,103.99000000000001,6.0,4.0,0.0,0.0,1.0,0.0,0.0,,4,0.20825793994568026,False,Small transfer/storage
+Bord Na Móna Recycling Limited - W0104,2024,14.5,3.0,2.0,0.0,0.0,1.0,0.0,0.0,,4,0.19625759624118105,False,Small transfer/storage
+Bord Na Móna Recycling Limited - W0131,2021,19440.17,14.0,9.0,0.0,0.0,1.0,0.0,0.0,,1,0.21465607999866504,False,Transfer/storage
+Bord Na Móna Recycling Limited - W0131,2022,11891.0,13.0,8.0,0.0,0.0,1.0,0.0,0.0,,1,0.2222470173514675,False,Transfer/storage
+Bord Na Móna Recycling Limited - W0131,2023,15269.83,9.0,7.0,0.0,0.0,1.0,0.0,0.0,,1,0.2164960699636574,False,Transfer/storage
+Bord Na Móna Recycling Limited - W0131,2024,11287.140000000001,9.0,8.0,0.0,0.0,1.0,0.0,0.0,,1,0.21077829016833388,False,Transfer/storage
+Bord Na Móna Recycling Limited - W0131,2025,11797.810000000001,11.0,8.0,0.0,0.0,1.0,0.0,0.0,,1,0.2143220914750535,False,Transfer/storage
+Bord Na Móna Recycling Limited - W0194,2021,1009.25,19.0,9.0,0.0,0.0,1.0,0.0,0.0,,1,0.1722036555477544,False,Transfer/storage
+Bord Na Móna Recycling Limited - W0194,2022,806.96,15.0,8.0,0.0,0.0,1.0,0.0,0.0,,1,0.1951801322982712,False,Transfer/storage
+Bord Na Móna Recycling Limited - W0194,2023,704.63,11.0,7.0,0.0,0.0,1.0000000000000002,0.0,0.0,,1,0.21661032724234408,False,Transfer/storage
+Bord Na Móna Recycling Limited - W0194,2024,747.19,10.0,7.0,0.0,0.0,1.0,0.0,0.0,,1,0.21889887472471542,False,Transfer/storage
+Bord Na Móna Recycling Limited - W0194,2025,607.38,11.0,7.0,0.0,0.0,1.0,0.0,0.0,,1,0.21628486714921424,False,Transfer/storage
+Bord Na Móna Recycling Limited - W0222,2021,39849.64,12.0,8.0,0.0,0.0,1.0,0.0,0.0,,1,0.2074239972249839,False,Transfer/storage
+Bord Na Móna Recycling Limited - W0222,2022,34516.130000000005,14.0,10.0,0.0,0.0,1.0,0.0,0.0,,1,0.1997899651006909,False,Transfer/storage
+Bord Na Móna Recycling Limited - W0222,2023,41473.87,14.0,9.0,0.0,0.0,1.0,0.0,0.0,,1,0.20698994572083085,False,Transfer/storage
+Bord Na Móna Recycling Limited - W0222,2024,39618.5,10.0,8.0,0.0,0.0,1.0,0.0,0.0,,1,0.20024041311182927,False,Transfer/storage
+Bord Na Móna Recycling Limited - W0222,2025,39755.56,11.0,9.0,0.0,0.0,1.0,0.0,0.0,,1,0.1980361487737491,False,Transfer/storage
+Bord Na Móna Recycling Limited - W0229,2021,468.25509999999997,11.0,6.0,0.0,0.0,1.0,0.0,0.0,,1,0.21537370846709075,False,Transfer/storage
+Bord Na Móna Recycling Limited - W0229,2022,576.73,12.0,7.0,0.0,0.0,1.0,0.0,0.0,,1,0.21347233026285517,False,Transfer/storage
+Bord Na Móna Recycling Limited - W0229,2023,638.26,11.0,6.0,0.0,0.0,1.0,0.0,0.0,,1,0.21716378106999445,False,Transfer/storage
+Bord Na Móna Recycling Limited - W0229,2024,225.512,10.0,6.0,0.0,0.0,1.0000000000000002,0.0,0.0,,4,0.21051895443822072,False,Small transfer/storage
+Bord Na Móna Recycling Limited - W0229,2025,371.25,10.0,6.0,0.0,0.0,1.0,0.0,0.0,,1,0.21954821394974378,False,Transfer/storage
+Bord Na Móna Recycling Limited - W0240,2021,69.16,10.0,6.0,0.0,0.0,1.0,0.0,0.0,,4,0.19336893418824247,False,Small transfer/storage
+Bord Na Móna Recycling Limited - W0240,2022,110.39999999999999,8.0,5.0,0.0,0.0,1.0,0.0,0.0,,4,0.20555232800850926,False,Small transfer/storage
+Bord Na Móna Recycling Limited - W0240,2023,412.88000000000005,11.0,6.0,0.0,0.0,1.0,0.0,0.0,,1,0.2157583791238331,False,Transfer/storage
+Bord Na Móna Recycling Limited - W0240,2024,381.96,8.0,5.0,0.0,0.0,1.0,0.0,0.0,,4,0.2209277633463514,False,Small transfer/storage
+Bord Na Móna Recycling Limited - W0240,2025,331.34000000000003,13.0,6.0,0.0,0.0,1.0,0.0,0.0,,1,0.2083506048402266,False,Transfer/storage
+Brownswood Inert Waste Recovery Facility - W0280,2021,135249.0,2.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,2,0.1608560131894488,False,Recycler/Recovery
+Brownswood Inert Waste Recovery Facility - W0280,2022,131109.74,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.20360085738531197,False,Recycler/Recovery
+Brownswood Inert Waste Recovery Facility - W0280,2023,196155.14,2.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,2,0.16410055094576526,False,Recycler/Recovery
+Brownswood Inert Waste Recovery Facility - W0280,2024,83684.77,2.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,2,0.1601049009257271,False,Recycler/Recovery
+Bruscar Bhearna Teoranta  (Carrowbrowne) - W0106,2021,9860.74,4.0,3.0,0.0,0.0,1.0,0.0,0.0,,4,0.20790159011357906,False,Small transfer/storage
+Bruscar Bhearna Teoranta  (Carrowbrowne) - W0106,2022,12708.85,4.0,3.0,0.0,0.0,1.0,0.0,0.0,,4,0.20413963461202067,False,Small transfer/storage
+Bruscar Bhearna Teoranta  (Carrowbrowne) - W0106,2023,11122.96,3.0,2.0,0.0,0.0,1.0,0.0,0.0,,4,0.19728004392422593,False,Small transfer/storage
+Bruscar Bhearna Teoranta  (Carrowbrowne) - W0106,2024,12770.01,5.0,2.0,0.0,0.0,1.0,0.0,0.0,,4,0.1989816916257252,False,Small transfer/storage
+Bruscar Bhearna Teoranta  (Carrowbrowne) - W0106,2025,13652.54,9.0,4.0,0.0,0.0,1.0,0.0,0.0,,1,0.21740573278102593,False,Transfer/storage
+Bruscar Bhearna Teoranta (Ballaghadereen) - W0163,2021,853.0,4.0,2.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.19950260823189297,False,Recycler/Recovery
+Bruscar Bhearna Teoranta (Ballaghadereen) - W0163,2022,873.0,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.20531933844559053,False,Recycler/Recovery
+Bruscar Bhearna Teoranta (Ballaghadereen) - W0163,2023,1609.0,5.0,4.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.18687958717333913,False,Recycler/Recovery
+Bruscar Bhearna Teoranta (Ballaghadereen) - W0163,2024,1809.0,4.0,3.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.19616152071322046,False,Recycler/Recovery
+Bruscar Bhearna Teoranta (Ballaghadereen) - W0163,2025,2827.0,6.0,4.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.19055854075130046,False,Recycler/Recovery
+Bruscar Bhearna Teoranta (Drumshanbo) - W0216,2021,388.0,4.0,2.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.19567156139476488,False,Recycler/Recovery
+Bruscar Bhearna Teoranta (Drumshanbo) - W0216,2022,490.0,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.20119126293961637,False,Recycler/Recovery
+Bruscar Bhearna Teoranta (Drumshanbo) - W0216,2023,835.0,5.0,4.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.1836706169165342,False,Recycler/Recovery
+Bruscar Bhearna Teoranta (Drumshanbo) - W0216,2024,1460.0,6.0,5.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.1772605490207373,False,Recycler/Recovery
+Bruscar Bhearna Teoranta (Drumshanbo) - W0216,2025,1301.0,7.0,5.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.17683594903005795,False,Recycler/Recovery
+CHI Environmental Limited - W0260,2021,24179.0,6.0,4.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.20063096740977088,False,Recycler/Recovery
+CHI Environmental Limited - W0260,2022,37655.0,6.0,4.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.19719037769568332,False,Recycler/Recovery
+CHI Environmental Limited - W0260,2023,30380.0,6.0,4.0,1.0,0.0,0.0,0.045819618169848586,0.0,1.0,0,0.1616166654549301,False,Recycler/Recovery
+CHI Environmental Limited - W0260,2024,35583.78,8.0,4.0,1.0,0.0,0.0,0.026123419153333348,0.0,1.0,0,0.17183721517711686,False,Recycler/Recovery
+CHI Environmental Limited - W0260,2025,41085.48,6.0,3.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.19955771518438448,False,Recycler/Recovery
+Calary Quarry - W0293,2022,33328.15,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.2095180827709633,False,Recycler/Recovery
+Calary Quarry - W0293,2023,177831.19,2.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,2,0.16190687905593965,False,Recycler/Recovery
+Calary Quarry - W0293,2024,302000.0,2.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,2,0.1619706216361827,False,Recycler/Recovery
+Calary Quarry - W0293,2025,304339.03,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.19397292610422356,False,Recycler/Recovery
+Cavan Waste Disposal Ltd - W0207,2021,1849.02,9.0,4.0,0.0,0.0,1.0,0.0,0.0,,4,0.22071922778020792,False,Small transfer/storage
+Cavan Waste Disposal Ltd - W0207,2022,1528.7199999999998,9.0,6.0,0.0,0.0,1.0,0.0,0.0,,1,0.22858185414795545,False,Transfer/storage
+Cavan Waste Disposal Ltd - W0207,2023,1121.4499999999998,10.0,6.0,0.0,0.0,1.0,0.0,0.0,,1,0.22323397452641963,False,Transfer/storage
+Cavan Waste Disposal Ltd - W0207,2024,1665.29,9.0,5.0,0.0,0.0,1.0,0.0,0.0,,1,0.22649139558528242,False,Transfer/storage
+Cavan Waste Disposal Ltd - W0207,2025,2931.0899999999997,9.0,5.0,0.0,0.0,1.0000000000000002,0.0,0.0,,1,0.22679980459252486,False,Transfer/storage
+Clashford Recovery Facilities LTD - W0265,2023,10607.0,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.2133465755300039,False,Recycler/Recovery
+Clashford Recovery Facilities LTD - W0265,2024,20645.0,3.0,2.0,0.9617340760474691,0.0,0.0,0.0,0.0,1.0,0,0.18549629286839042,False,Recycler/Recovery
+Clashford Recovery Facilities LTD - W0265,2025,21287.0,4.0,2.0,1.0,0.0,0.0,0.8797388077230235,0.0,1.0,2,0.10655480157811659,False,Recycler/Recovery
+Clean (Irl) Refuse & Recycling Co. Unlimited Company - W0253,2021,404.609,16.0,8.0,0.0,0.0,1.0,0.0,0.0,,1,0.18467406222368538,False,Transfer/storage
+Clean (Irl) Refuse & Recycling Co. Unlimited Company - W0253,2022,897.8699999999999,12.0,7.0,0.0,0.0,1.0000000000000002,0.0,0.0,,1,0.2163071434596982,False,Transfer/storage
+Clean (Irl) Refuse & Recycling Co. Unlimited Company - W0253,2023,1473.7800000000002,20.0,9.0,0.0,0.0,1.0,0.0,0.0,,1,0.18141613458897243,False,Transfer/storage
+Clean (Irl) Refuse & Recycling Co. Unlimited Company - W0253,2024,3381.549,18.0,9.0,0.0,0.0,1.0,0.0,0.0,,1,0.20345433057028778,False,Transfer/storage
+Clean (Irl) Refuse & Recycling Co. Unlimited Company - W0253,2025,2656.844,20.0,10.0,0.0,0.0,1.0,0.0,0.0,,1,0.17951486172393266,False,Transfer/storage
+Clonakilty Waste Transfer Station - W0008,2021,19.68,4.0,2.0,0.0,0.0,1.0,0.0,0.0,,4,0.19736879877320018,False,Small transfer/storage
+Clonakilty Waste Transfer Station - W0008,2022,134.66,4.0,2.0,0.0,0.0,1.0,0.0,0.0,,4,0.2112308340386002,False,Small transfer/storage
+Clonakilty Waste Transfer Station - W0008,2023,92.2,4.0,2.0,0.0,0.0,1.0,0.0,0.0,,4,0.20984796690601254,False,Small transfer/storage
+Corranure Landfill - W0077,2021,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,,4,0.14594567740689113,False,Small transfer/storage
+Corranure Landfill - W0077,2022,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,,4,0.14594567740689113,False,Small transfer/storage
+Corranure Landfill - W0077,2023,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,,4,0.14594567740689113,False,Small transfer/storage
+Corranure Landfill - W0077,2024,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,,4,0.14594567740689113,False,Small transfer/storage
+Corranure Landfill - W0077,2025,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,,4,0.14594567740689113,False,Small transfer/storage
+Country Clean Recycling Unlimited Company - W0257,2021,9941.98,21.0,10.0,0.0,0.0,1.0,0.0,0.0,,1,0.18768289125159654,False,Transfer/storage
+Country Clean Recycling Unlimited Company - W0257,2022,8442.17,16.0,10.0,0.0,0.0,1.0,0.0,0.0,,1,0.20718612416417193,False,Transfer/storage
+Country Clean Recycling Unlimited Company - W0257,2023,10565.19,14.0,9.0,0.0,0.0,1.0,0.0,0.0,,1,0.22168169674421495,False,Transfer/storage
+Country Clean Recycling Unlimited Company - W0257,2024,15119.46,15.0,9.0,0.0,0.8838536561490953,0.11614634385090473,0.0,0.0,0.0,3,-0.006405845846350955,True,Disposal/Landfill
+Country Clean Recycling Unlimited Company - W0257,2025,18050.4,16.0,9.0,0.0,0.9077056464122678,0.09229435358773212,0.0,0.0,0.0,3,-0.0015082656334687305,True,Disposal/Landfill
+Crag Arklow Limited - P0031,2025,15750.0,1.0,1.0,0.0,0.0,1.0,0.0,0.0,,4,0.14256422466473595,False,Small transfer/storage
+Derrinumera Landfill Facility - W0021,2021,0.0,2.0,2.0,0.0,0.0,0.0,0.0,0.0,,4,0.11833231621973839,False,Small transfer/storage
+Derrinumera Landfill Facility - W0021,2022,0.0,2.0,2.0,0.0,0.0,0.0,0.0,0.0,,4,0.11833231621973839,False,Small transfer/storage
+Derrinumera Landfill Facility - W0021,2023,0.0,2.0,2.0,0.0,0.0,0.0,0.0,0.0,,4,0.11833231621973839,False,Small transfer/storage
+Derrinumera Landfill Facility - W0021,2024,0.0,2.0,2.0,0.0,0.0,0.0,0.0,0.0,,4,0.11833231621973839,False,Small transfer/storage
+Derrinumera Landfill Facility - W0021,2025,0.0,2.0,2.0,0.0,0.0,0.0,0.0,0.0,,4,0.11833231621973839,False,Small transfer/storage
+Derryclure Landfill - W0029,2021,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,,4,0.14594567740689113,False,Small transfer/storage
+Derryclure Landfill - W0029,2022,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,,4,0.14594567740689113,False,Small transfer/storage
+Derryclure Landfill - W0029,2023,0.0,2.0,2.0,0.0,0.0,0.0,0.0,0.0,,4,0.11833231621973839,False,Small transfer/storage
+Derryclure Landfill - W0029,2024,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,,4,0.14594567740689113,False,Small transfer/storage
+Dingle Civic Amenity Centre - W0225,2021,24.08,2.0,1.0,0.0,0.0,1.0,0.0,0.0,,4,0.19302194174617143,False,Small transfer/storage
+Dingle Civic Amenity Centre - W0225,2022,11.88,2.0,1.0,0.0,0.0,1.0,0.0,0.0,,4,0.1864321635246135,False,Small transfer/storage
+Dingle Civic Amenity Centre - W0225,2023,21.3,2.0,1.0,0.0,0.0,1.0,0.0,0.0,,4,0.1924726499036703,False,Small transfer/storage
+Dingle Civic Amenity Centre - W0225,2024,39.28,2.0,1.0,0.0,0.0,1.0,0.0,0.0,,4,0.19538559809149536,False,Small transfer/storage
+Dingle Civic Amenity Centre - W0225,2025,23.6,2.0,1.0,0.0,0.0,1.0,0.0,0.0,,4,0.19302194174617143,False,Small transfer/storage
+Donohill Landfill - W0074,2021,80.9,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.1874996249254754,False,Recycler/Recovery
+Donohill Landfill - W0074,2022,60.04,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.18446729978869997,False,Recycler/Recovery
+Donohill Landfill - W0074,2023,63.08,2.0,1.0,0.0,0.0,1.0,0.0,0.0,,4,0.19467183569224444,False,Small transfer/storage
+Donohill Landfill - W0074,2024,66.28,2.0,1.0,0.0,0.0,1.0,0.0,0.0,,4,0.1951244760016494,False,Small transfer/storage
+Donohill Landfill - W0074,2025,69.8,4.0,2.0,0.8730659025787966,0.12693409742120343,0.0,0.0,0.12693409742120343,0.8730659025787966,0,0.058619954719744016,False,Recycler/Recovery
+Drehid Waste Management Facility - W0201,2021,144621.96,17.0,3.0,0.995378295246448,0.00462170475355195,0.0,0.1271765366753431,0.0,0.995378295246448,0,0.11698757612223282,False,Recycler/Recovery
+Drehid Waste Management Facility - W0201,2022,44087.909999999996,15.0,4.0,0.9844864499133663,0.015513550086633727,0.0,0.9844864499133663,0.0,0.9844864499133663,2,0.029948886725956636,False,Recycler/Recovery
+Drehid Waste Management Facility - W0201,2023,138532.64000000004,21.0,3.0,0.9952206209309228,0.004779379069077149,0.0,0.9952206209309228,0.0,0.9952206209309228,2,0.06506238429575228,False,Recycler/Recovery
+Drehid Waste Management Facility - W0201,2024,140625.77999999997,31.0,6.0,0.995493713883756,0.00450628611624412,0.0,0.995493713883756,0.0,0.9954937138837558,2,0.04341121802121839,False,Recycler/Recovery
+Drehid Waste Management Facility - W0201,2025,126557.95999999999,26.0,4.0,0.9953964175781594,0.004603582421840555,0.0,0.9953964175781594,0.0,0.9953964175781594,2,0.058206447298496,False,Recycler/Recovery
+Dublin Port Company - P1022,2021,65373.0,2.0,1.0,1.0,0.0,0.0,1.0,1.0,1.0,2,0.0004939497442802976,False,Recycler/Recovery
+Dungarvan Waste Disposal Site - W0032,2021,190.56,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.19811877413900342,False,Recycler/Recovery
+Dungarvan Waste Disposal Site - W0032,2022,176.36,2.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,2,0.1183824272535462,False,Recycler/Recovery
+Dungarvan Waste Disposal Site - W0032,2023,225.26,2.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,2,0.122775654162817,False,Recycler/Recovery
+Dungarvan Waste Disposal Site - W0032,2024,227.12,2.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,2,0.122775654162817,False,Recycler/Recovery
+Dungarvan Waste Disposal Site - W0032,2025,279.12,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.19955241720109157,False,Recycler/Recovery
+East Cork Landfill Site - W0022,2022,6.74,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.16774881257445046,False,Recycler/Recovery
+East Cork Landfill Site - W0022,2023,7.64,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.1707056949280394,False,Recycler/Recovery
+East Cork Landfill Site - W0022,2024,4.94,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.16416768575641105,False,Recycler/Recovery
+East Cork Landfill Site - W0022,2025,3.86,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.15825579784678978,False,Recycler/Recovery
+Enva Ireland Limited (Portlaoise) - W0184,2021,69486.326,16.0,12.0,0.0,0.0034021082075918075,0.9965978917924081,0.0,0.47911661065516686,0.0,1,0.022454826403575545,False,Transfer/storage
+Enva Ireland Limited (Portlaoise) - W0184,2022,65196.520000000004,15.0,9.0,0.0,0.0,1.0,0.0,0.6546950665464966,,1,0.06279001812291374,False,Transfer/storage
+Enva Ireland Limited (Portlaoise) - W0184,2023,58162.71000000001,17.0,10.0,0.9448383680884195,0.0,0.05516163191158045,0.0,0.6277047613496689,1.0,0,-0.0068474661509376755,True,Recycler/Recovery
+Enva Ireland Limited (Portlaoise) - W0184,2024,66834.06999999999,16.0,10.0,0.980509192392443,0.0,0.01949080760755705,0.0,0.7019280735110103,1.0,0,0.0029855595530265955,False,Recycler/Recovery
+Enva Ireland Limited (Portlaoise) - W0184,2025,72896.60999999999,22.0,11.0,0.9815202654828532,0.0,0.01847973451714696,0.0,0.9564835731044283,1.0,0,-0.03799152345975776,True,Recycler/Recovery
+Enva Ireland Limited (Shannon) - W0041,2021,1.408,3.0,2.0,0.0,0.0,1.0,0.0,1.0,,4,0.00695298836050795,False,Small transfer/storage
+Enva Ireland Limited (Shannon) - W0041,2022,1.259,9.0,3.0,0.0,0.0,1.0,0.0,1.0,,4,-0.01222717345367641,True,Small transfer/storage
+Enva Ireland Limited (Shannon) - W0041,2023,1.7389999999999999,4.0,2.0,0.0,0.0,1.0,0.0,0.8280621046578494,,4,0.024054648743846108,False,Small transfer/storage
+Enva Ireland Limited (Shannon) - W0041,2024,0.388,2.0,1.0,0.0,0.0,1.0,0.0,0.0,,4,0.14081047756563425,False,Small transfer/storage
+Enva Ireland Limited (Shannon) - W0041,2025,0.934,3.0,2.0,0.0,0.0,1.0,0.0,0.04817987152034261,,4,0.12508112056894372,False,Small transfer/storage
+Enva Ireland Limited - W0192,2021,13830.342,16.0,8.0,0.0006960059266791811,0.9844721844188667,0.014831809654453952,0.0,0.311322308587886,0.0007064843683544617,3,-0.02953636166757967,True,Disposal/Landfill
+Enva Ireland Limited - W0192,2022,23559.32,12.0,5.0,0.0002092590108712815,0.0,0.9997907409891287,0.0,0.15477696300232774,1.0,1,0.1157846769728369,False,Transfer/storage
+Enva Ireland Limited - W0192,2023,31945.858,11.0,4.0,2.0722561278523183e-05,0.0,0.9999792774387215,0.0,0.09199371010789567,1.0,1,0.14974729121831648,False,Transfer/storage
+Enva Ireland Limited - W0192,2024,18508.019999999997,13.0,6.0,0.000445752706124156,0.0,0.9995542472938759,0.0,0.19674335774437246,1.0,1,0.10221960214966364,False,Transfer/storage
+Enva Ireland Limited - W0192,2025,44607.15,12.0,4.0,0.0,0.0,1.0,0.0,0.11346118279244471,,1,0.1519618444670786,False,Transfer/storage
+GLV Bay Lane Limited - W0301,2025,33.76,1.0,1.0,0.0,0.0,1.0,0.0,0.0,,4,0.16579863627243724,False,Small transfer/storage
+Galway Corporation Depot - W0166,2022,66.66,2.0,1.0,0.0,0.0,1.0,0.0,0.0,,4,0.1951244760016494,False,Small transfer/storage
+Galway Corporation Depot - W0166,2024,66.97,2.0,1.0,0.0,0.0,1.0,0.0,0.0,,4,0.194853978285269,False,Small transfer/storage
+Galway Corporation Depot - W0166,2025,8.76,4.0,2.0,0.0,0.0,1.0,0.0,0.0,,4,0.18895925930915886,False,Small transfer/storage
+Galway Metal Company Limited - P1006,2021,21844.750000000004,15.0,5.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.18259453018991922,False,Recycler/Recovery
+Galway Metal Company Limited - P1006,2022,19900.95,13.0,5.0,0.9999999999999998,0.0,0.0,0.0,0.0,1.0,0,0.18266884559345237,False,Recycler/Recovery
+Galway Metal Company Limited - P1006,2023,20645.863,12.0,6.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.18221342352237474,False,Recycler/Recovery
+Galway Metal Company Limited - P1006,2024,23399.399999999998,18.0,6.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.17281320475882594,False,Recycler/Recovery
+Galway Metal Company Limited - P1006,2025,22887.3,15.0,6.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.1799756510803623,False,Recycler/Recovery
+Garryhesta Pit - W0299,2021,43162.0,2.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,2,0.14944764622886592,False,Recycler/Recovery
+Garryhesta Pit - W0299,2022,253960.03,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.19554800070764589,False,Recycler/Recovery
+Garryhesta Pit - W0299,2023,281665.62,2.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,2,0.1638292662249139,False,Recycler/Recovery
+Garryhesta Pit - W0299,2024,300000.0,2.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,2,0.1619706216361827,False,Recycler/Recovery
+Garryhesta Pit - W0299,2025,276059.9,2.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,2,0.1638292662249139,False,Recycler/Recovery
+Glanway Limited - P1015,2023,17274.8,2.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,3,0.110031012764426,False,Disposal/Landfill
+Glanway Limited - P1015,2024,11199.26,2.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,3,0.10825794454122734,False,Disposal/Landfill
+Glanway Limited - P1015,2025,18318.34,2.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,3,0.10887038489047862,False,Disposal/Landfill
+Gortadroma Landfill Site - W0017,2021,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,,4,0.14594567740689113,False,Small transfer/storage
+Gortadroma Landfill Site - W0017,2022,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,,4,0.14594567740689113,False,Small transfer/storage
+Gortadroma Landfill Site - W0017,2023,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,,4,0.14594567740689113,False,Small transfer/storage
+Gortadroma Landfill Site - W0017,2024,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,,4,0.14594567740689113,False,Small transfer/storage
+Gortadroma Landfill Site - W0017,2025,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,,4,0.14594567740689113,False,Small transfer/storage
+Green Circular Economy Unlimited Company - W0205,2021,29283.53,26.0,8.0,0.9999009682234348,0.0,9.90317765651887e-05,0.0,0.0,1.0,0,0.1063428401020573,False,Recycler/Recovery
+Green Circular Economy Unlimited Company - W0205,2022,35244.998999999996,26.0,10.0,0.0,0.0,1.0000000000000002,0.0,0.0,,1,0.15760056441107245,False,Transfer/storage
+Green Circular Economy Unlimited Company - W0205,2023,29896.281,27.0,10.0,0.0,0.0,1.0,0.0,0.0,,1,0.14461053405922275,False,Transfer/storage
+Green Circular Economy Unlimited Company - W0205,2024,23105.795,26.0,10.0,0.0,0.0,1.0,0.0,0.0,,1,0.15836855975042885,False,Transfer/storage
+Green Circular Economy Unlimited Company - W0205,2025,19148.38,24.0,9.0,0.0,0.0,0.9999999999999998,0.0,0.0,,1,0.17972863404915929,False,Transfer/storage
+Hi-Volt Ireland Limited - W0267,2021,556.168,10.0,5.0,0.0,0.0,1.0,0.0,0.0,,4,0.2181361137278227,False,Small transfer/storage
+Hi-Volt Ireland Limited - W0267,2022,446.476,10.0,5.0,0.0,0.0,1.0000000000000002,0.0,0.0,,4,0.2164494460464101,False,Small transfer/storage
+Hi-Volt Ireland Limited - W0267,2023,517.408,10.0,5.0,0.0,0.0,1.0,0.0,0.0,,4,0.2181361137278227,False,Small transfer/storage
+Hi-Volt Ireland Limited - W0267,2024,428.06199999999995,10.0,6.0,0.0,0.0,1.0000000000000002,0.0,0.0,,1,0.219697911162349,False,Transfer/storage
+Huntstown Inert Waste Recovery Facility - W0277,2021,1499662.0,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.15681968927694806,False,Recycler/Recovery
+Huntstown Inert Waste Recovery Facility - W0277,2022,1411192.48,2.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,2,0.11863974496738483,False,Recycler/Recovery
+Huntstown Inert Waste Recovery Facility - W0277,2023,127398.48,2.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,2,0.1605623220548013,False,Recycler/Recovery
+Huntstown Inert Waste Recovery Facility - W0277,2025,726647.22,2.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,2,0.1318672994574156,False,Recycler/Recovery
+Indaver Ireland Limited (Duleek) - W0167,2022,2.74,2.0,1.0,1.0,0.0,0.0,0.0,1.0,1.0,0,-0.007464928819798322,True,Recycler/Recovery
+Indaver Ireland Limited (Duleek) - W0167,2023,20.64,6.0,3.0,1.0,0.0,0.0,0.0,1.0,1.0,0,-0.0008801739989926505,True,Recycler/Recovery
+Indaver Ireland Limited (Duleek) - W0167,2024,89.2,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.18909183075858776,False,Recycler/Recovery
+Indaver Ireland Limited (Duleek) - W0167,2025,340.08,4.0,2.0,1.0,0.0,0.0,0.0,0.045459891790167024,1.0,0,0.1594646587477772,False,Recycler/Recovery
+"Indaver Ireland Limited (Tolka Quay Road), Dublin Port - W0036",2021,58.10300000000001,8.0,3.0,0.0,1.0,0.0,0.0,1.0,0.0,3,0.030862398562072846,False,Disposal/Landfill
+"Indaver Ireland Limited (Tolka Quay Road), Dublin Port - W0036",2022,8.733,9.0,4.0,0.0,1.0,0.0,0.0,1.0,0.0,3,0.01332734215328335,False,Disposal/Landfill
+"Indaver Ireland Limited (Tolka Quay Road), Dublin Port - W0036",2023,8.957999999999998,7.0,3.0,0.0,1.0,0.0,0.0,1.0,0.0,3,0.021815195985905533,False,Disposal/Landfill
+"Indaver Ireland Limited (Tolka Quay Road), Dublin Port - W0036",2024,14.706000000000001,6.0,3.0,0.0,1.0,0.0,0.0,1.0,0.0,3,0.028314637619074157,False,Disposal/Landfill
+"Indaver Ireland Limited (Tolka Quay Road), Dublin Port - W0036",2025,22.241,13.0,5.0,0.0,1.0,0.0,0.0,1.0,0.0,3,-0.006026694551213074,True,Disposal/Landfill
+Integrated Materials Solutions Limited Partnership - W0129,2021,1170536.1,22.0,6.0,0.20125208440816136,0.7987479155918386,0.0,0.003626355479339766,0.0,0.2012520844081614,3,-0.02834556166265012,True,Disposal/Landfill
+Integrated Materials Solutions Limited Partnership - W0129,2022,787225.6359999999,156.0,7.0,0.16264302652867368,0.8373569734713263,0.0,0.05605495804763146,0.0,0.16264302652867368,3,-0.1257572390056788,True,Disposal/Landfill
+Integrated Materials Solutions Limited Partnership - W0129,2023,1053701.04,141.0,5.0,0.11317253706041705,0.8868274629395829,0.0,0.0526400543364748,0.0,0.11317253706041705,3,-0.11103358264269025,True,Disposal/Landfill
+Integrated Materials Solutions Limited Partnership - W0129,2024,1066397.8,142.0,6.0,0.749970948927314,0.25002905107268597,0.0,0.02259856500079051,0.0,0.749970948927314,1,-0.09368871405615864,True,Transfer/storage
+Integrated Materials Solutions Limited Partnership - W0129,2025,1032764.09,154.0,5.0,1.0,0.0,0.0,0.15645745389927335,0.0,1.0,1,-0.048635711826889416,True,Transfer/storage
+Irish Packaging Recycling Unlimited Company - W0263,2021,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,,4,0.14594567740689113,False,Small transfer/storage
+JFK Environmental Limited - W0196,2021,99.16,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.18881725005590172,False,Recycler/Recovery
+JFK Environmental Limited - W0196,2022,17.299999999999997,3.0,2.0,0.7826589595375724,0.21734104046242778,0.0,0.0,0.21734104046242778,0.7826589595375724,0,0.009123825843413536,False,Recycler/Recovery
+JFK Environmental Limited - W0196,2025,21.9,1.0,1.0,0.0,0.0,1.0,0.0,1.0,,4,0.006294196137141772,False,Small transfer/storage
+KMK Metals Recycling Limited - P1076,2025,24.278,1.0,1.0,0.0,0.0,1.0,0.0,0.0,,4,0.1659216031005557,False,Small transfer/storage
+KMK Metals Recycling Limited - W0113,2021,5.664000000000001,2.0,2.0,1.0,0.0,0.0,0.0,0.01571327683615819,1.0,0,0.12388425046637541,False,Recycler/Recovery
+KMK Metals Recycling Limited - W0113,2022,5.73,1.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.14178930574952558,False,Recycler/Recovery
+KMK Metals Recycling Limited - W0113,2023,6.164,2.0,2.0,0.6815379623621025,0.0,0.3184620376378975,0.0,0.3184620376378975,1.0,4,-0.01846804459089746,True,Small transfer/storage
+KMK Metals Recycling Limited - W0113,2024,7.952999999999999,2.0,2.0,0.0,0.0,1.0,0.0,0.1298880925436942,,4,0.13272650865616847,False,Small transfer/storage
+KMK Metals Recycling Limited - W0113,2025,1.276,2.0,2.0,0.12695924764890282,0.0,0.8730407523510972,0.0,0.12695924764890282,1.0,4,0.0029705500052396028,False,Small transfer/storage
+Key Waste Management Limited - W0045,2021,24532.52,9.0,5.0,0.0,0.0,1.0,0.0,0.0,,1,0.21372533834917673,False,Transfer/storage
+Key Waste Management Limited - W0045,2022,25214.46,10.0,6.0,0.0,0.0,1.0000000000000002,0.0,0.0,,1,0.21449033214282504,False,Transfer/storage
+Key Waste Management Limited - W0045,2023,19388.36,14.0,6.0,0.0,0.0,1.0,0.0,0.0,,1,0.214680702353378,False,Transfer/storage
+Key Waste Management Limited - W0045,2024,21792.84,21.0,7.0,0.0,0.0,1.0,0.0,0.0,,1,0.19607754398997507,False,Transfer/storage
+Key Waste Management Limited - W0045,2025,31004.79,25.0,8.0,0.0,0.0,1.0,0.0,0.0,,1,0.16222349401361957,False,Transfer/storage
+Kiernan Sand & Gravel Ltd - W0262,2021,7671.0,2.0,2.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.20068631536589554,False,Recycler/Recovery
+Kiernan Sand & Gravel Ltd - W0262,2022,14582.0,2.0,2.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.2028862474740053,False,Recycler/Recovery
+Kiernan Sand & Gravel Ltd - W0262,2023,15152.0,1.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.1916009216782339,False,Recycler/Recovery
+Kiernan Sand & Gravel Ltd - W0262,2024,9056.0,2.0,2.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.20095286833745296,False,Recycler/Recovery
+Kiernan Sand & Gravel Ltd - W0262,2025,8022.0,3.0,2.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.20265000772960612,False,Recycler/Recovery
+Kildare County Council - P1063,2021,386069.41000000003,6.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,3,0.06534237282824273,False,Disposal/Landfill
+Kildare County Council - P1063,2022,50192.22,3.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,3,0.10370601607164737,False,Disposal/Landfill
+Kildare County Council - P1063,2023,190.0,1.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,3,0.05843907287492045,False,Disposal/Landfill
+Kildare Sand & Gravel Limited - W0295,2021,194051.59,2.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,2,0.16385133928708473,False,Recycler/Recovery
+Kildare Sand & Gravel Limited - W0295,2022,131053.61,2.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,2,0.1608560131894488,False,Recycler/Recovery
+Kildare Sand & Gravel Limited - W0295,2023,105808.15,2.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,2,0.15857004668932628,False,Recycler/Recovery
+Kildare Sand & Gravel Limited - W0295,2024,82703.74,2.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,2,0.1601049009257271,False,Recycler/Recovery
+Killarney Waste Disposal Unlimited Company - W0217,2021,673.941,8.0,5.0,0.0,0.0,1.0,0.0,0.0,,4,0.22248202394223193,False,Small transfer/storage
+Killarney Waste Disposal Unlimited Company - W0217,2022,731.0799999999999,3.0,2.0,0.0,0.0,1.0,0.0,0.0,,4,0.20985537035024182,False,Small transfer/storage
+Killarney Waste Disposal Unlimited Company - W0217,2023,1114.421,3.0,2.0,0.0,0.0,1.0,0.0,0.0,,4,0.2076824396574498,False,Small transfer/storage
+Killarney Waste Disposal Unlimited Company - W0217,2024,3636.57,9.0,6.0,0.0,0.0,1.0,0.0,0.0,,1,0.2278559491800694,False,Transfer/storage
+Killarney Waste Disposal Unlimited Company - W0217,2025,3557.41,14.0,6.0,0.0,0.0,1.0,0.0,0.0,,1,0.22312884336004463,False,Transfer/storage
+Kilmurry South - W0048,2021,49159.33,6.0,3.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.2004170740557945,False,Recycler/Recovery
+Kilmurry South - W0048,2022,53165.2,7.0,4.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.1943728973497043,False,Recycler/Recovery
+Kilmurry South - W0048,2023,53307.94,8.0,5.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.1862484581736477,False,Recycler/Recovery
+Kilmurry South - W0048,2024,49619.06999999999,8.0,5.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.187943016056345,False,Recycler/Recovery
+Kilmurry South - W0048,2025,23835.999999999996,9.0,6.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.18837200490611256,False,Recycler/Recovery
+Kilsaran Concrete - W0300,2021,299917.9,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.19374190295217475,False,Recycler/Recovery
+Kilsaran Concrete - W0300,2022,249307.87,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.19554800070764589,False,Recycler/Recovery
+Kilsaran Concrete - W0300,2023,299987.0,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.19374190295217475,False,Recycler/Recovery
+Kilsaran Concrete - W0300,2024,226455.0,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.19507900225453528,False,Recycler/Recovery
+Kilsaran Concrete - W0300,2025,233589.7,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.19507900225453528,False,Recycler/Recovery
+Kilsaran Concrete Unlimited Company - W0296,2021,399738.82,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.1862101512864432,False,Recycler/Recovery
+Kilsaran Concrete Unlimited Company - W0296,2022,275875.35,2.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,2,0.1638292662249139,False,Recycler/Recovery
+Kilsaran Concrete Unlimited Company - W0296,2023,398193.58,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.18724516935898888,False,Recycler/Recovery
+Kilsaran Concrete Unlimited Company - W0296,2024,290251.09,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.19368562481949103,False,Recycler/Recovery
+Kilsaran Concrete Unlimited Company - W0296,2025,343907.15,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.19127803959583267,False,Recycler/Recovery
+Kinsale Road Landfill - W0012,2021,401.18,2.0,1.0,0.0,0.0,1.0,0.0,0.0,,4,0.1883071737272463,False,Small transfer/storage
+Kinsale Road Landfill - W0012,2022,188.92,2.0,1.0,0.0,0.0,1.0,0.0,0.0,,4,0.1943606381360944,False,Small transfer/storage
+Kinsale Road Landfill - W0012,2023,237.84,2.0,1.0,0.0,0.0,1.0,0.0,0.0,,4,0.19412983845535892,False,Small transfer/storage
+Kinsale Road Landfill - W0012,2024,279.3,2.0,1.0,0.0,0.0,1.0,0.0,0.0,,4,0.19442550248137713,False,Small transfer/storage
+Kinsale Road Landfill - W0012,2025,250.26,2.0,1.0,0.0,0.0,1.0,0.0,0.0,,4,0.19593700243489304,False,Small transfer/storage
+Knockharley Landfill - W0146,2022,22124.28,4.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.1967577139182562,False,Recycler/Recovery
+Knockharley Landfill - W0146,2023,28602.2,9.0,2.0,0.9762046276160574,0.023795372383942495,0.0,0.0,0.0,0.9762046276160575,0,0.15783810997599296,False,Recycler/Recovery
+Knockharley Landfill - W0146,2024,11975.8,6.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,2,0.10857866229758945,False,Recycler/Recovery
+Knockharley Landfill - W0146,2025,62.1,2.0,2.0,0.8776167471819646,0.12238325281803542,0.0,0.8776167471819646,0.0,0.8776167471819646,2,-0.0253250984683302,True,Recycler/Recovery
+Kyletalesha Landfill - W0026,2021,117400.0,4.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,3,0.10379366669778634,False,Disposal/Landfill
+Kyletalesha Landfill - W0026,2022,138644.2,6.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,3,0.08375149786144431,False,Disposal/Landfill
+Kyletalesha Landfill - W0026,2023,127952.48,4.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,3,0.10339240781428899,False,Disposal/Landfill
+Kyletalesha Landfill - W0026,2024,119799.75999999998,9.0,2.0,0.0,0.9998427375814444,0.0001572624185557634,0.0,0.0,0.0,3,0.07407321357826757,False,Disposal/Landfill
+Kyletalesha Landfill - W0026,2025,20297.199999999997,7.0,2.0,0.0,0.9988559998423429,0.001144000157657214,0.0,0.0,0.0,3,0.08794766075974148,False,Disposal/Landfill
+Macroom Civic Amenity Site - W0142,2022,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,,4,0.14594567740689113,False,Small transfer/storage
+Macroom Civic Amenity Site - W0142,2023,13.32,2.0,1.0,0.0,0.0,1.0,0.0,0.0,,4,0.19054162027097626,False,Small transfer/storage
+Macroom Civic Amenity Site - W0142,2024,17.44,2.0,1.0,0.0,0.0,1.0,0.0,0.0,,4,0.1922398554256456,False,Small transfer/storage
+Macroom Civic Amenity Site - W0142,2025,22.1,2.0,1.0,0.0,0.0,1.0,0.0,0.0,,4,0.1923589836823109,False,Small transfer/storage
+Metal Processors Limited - P0401,2021,16468.0,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.21478360740850533,False,Recycler/Recovery
+Metal Processors Limited - P0401,2022,14693.0,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.21450093909487,False,Recycler/Recovery
+Metal Processors Limited - P0401,2023,16384.0,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.21478360740850533,False,Recycler/Recovery
+Metal Processors Limited - P0401,2024,15466.0,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.21450093909487,False,Recycler/Recovery
+Metal Processors Limited - P0401,2025,13436.62,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.21433451635926315,False,Recycler/Recovery
+Midleton Quarry - W0307,2023,243851.42,2.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,2,0.16244263388389046,False,Recycler/Recovery
+Midleton Quarry - W0307,2024,278293.0,2.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,2,0.1638292662249139,False,Recycler/Recovery
+Midleton Quarry - W0307,2025,296924.32,2.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,2,0.1614280472480476,False,Recycler/Recovery
+Milverton Waste Recovery Facility - W0272,2021,4990.0,2.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,2,0.13345962407707013,False,Recycler/Recovery
+Milverton Waste Recovery Facility - W0272,2023,379692.89,2.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,2,0.15555857808193813,False,Recycler/Recovery
+Milverton Waste Recovery Facility - W0272,2024,399608.94,2.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,2,0.1526470626739767,False,Recycler/Recovery
+Milverton Waste Recovery Facility - W0272,2025,387247.23,2.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,2,0.15475349264324756,False,Recycler/Recovery
+Mulleady’s Limited (Drumlish) - W0169,2021,195.46,6.0,4.0,0.0,0.0,1.0,0.0,0.0,,4,0.21348493835420507,False,Small transfer/storage
+Mulleady’s Limited (Drumlish) - W0169,2022,353.04,3.0,3.0,0.0,0.0,1.0,0.0,0.0,,4,0.20904431813084795,False,Small transfer/storage
+Mulleady’s Limited (Drumlish) - W0169,2023,112.08,4.0,4.0,0.0,0.0,1.0,0.0,0.0,,4,0.1996639941038355,False,Small transfer/storage
+Mulleady’s Limited (Drumlish) - W0169,2024,504.37,7.0,5.0,0.0,0.0,1.0,0.0,0.0,,4,0.21921124735134795,False,Small transfer/storage
+Mulleady’s Limited (Drumlish) - W0169,2025,1216.5700000000002,6.0,4.0,0.0,0.0,1.0,0.0,0.0,,4,0.21347427016129156,False,Small transfer/storage
+Mulleady’s Limited (Mullingar) - W0197,2021,138.82,12.0,7.0,0.0,0.0,1.0,0.0,0.0,,1,0.18919004568078096,False,Transfer/storage
+Mulleady’s Limited (Mullingar) - W0197,2022,145.68,12.0,8.0,0.0,0.0,1.0,0.0,0.0,,1,0.17771958772213942,False,Transfer/storage
+Mulleady’s Limited (Mullingar) - W0197,2023,129.82,9.0,6.0,0.0,0.0,1.0,0.0,0.0,,4,0.20037510995811292,False,Small transfer/storage
+Mulleady’s Limited (Mullingar) - W0197,2024,262.78,11.0,7.0,0.0,0.0,1.0,0.0,0.0,,1,0.20359015208691839,False,Transfer/storage
+Mulleady’s Limited (Mullingar) - W0197,2025,196.1,7.0,5.0,0.0,0.0,1.0,0.0,0.0,,4,0.2127623911983637,False,Small transfer/storage
+Murray Waste Recycling Limited - W0258,2021,12441.730000000001,7.0,6.0,0.0,0.0,1.0,0.0,0.0,,1,0.21787080750877363,False,Transfer/storage
+Murray Waste Recycling Limited - W0258,2022,4432.3099999999995,9.0,8.0,0.0,0.0,1.0,0.0,0.0,,1,0.21570733515868723,False,Transfer/storage
+Murray Waste Recycling Limited - W0258,2023,3147.0240000000003,9.0,7.0,0.0,0.0,1.0,0.0,0.0,,1,0.2230238430397698,False,Transfer/storage
+Murray Waste Recycling Limited - W0258,2024,418.28,9.0,8.0,0.0,0.0,1.0,0.0,0.0,,1,0.19636138719340995,False,Transfer/storage
+Murray Waste Recycling Limited - W0258,2025,666.3399999999999,11.0,8.0,0.0,0.0,1.0000000000000002,0.0,0.0,,1,0.2014518807647077,False,Transfer/storage
+N&C Enterprises Limited - W0292,2021,240078.0,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.1961875025516132,False,Recycler/Recovery
+N&C Enterprises Limited - W0292,2022,187627.0,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.1979578071967541,False,Recycler/Recovery
+N&C Enterprises Limited - W0292,2023,344776.0,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.19100493855263,False,Recycler/Recovery
+N&C Enterprises Limited - W0292,2024,240933.0,4.0,3.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.18048844352332966,False,Recycler/Recovery
+N&C Enterprises Limited - W0292,2025,150216.0,3.0,2.0,1.0,0.0,0.0,1.0,0.0,1.0,2,0.13229962729496575,False,Recycler/Recovery
+North City Operations Depot - W0302,2023,1740.8999999999999,6.0,3.0,0.0,0.0,1.0,0.0,0.0,,4,0.2212767367859595,False,Small transfer/storage
+North City Operations Depot - W0302,2024,4399.9400000000005,6.0,3.0,0.0,0.0,1.0,0.0,0.0,,4,0.21980647696146144,False,Small transfer/storage
+North City Operations Depot - W0302,2025,5393.28,6.0,3.0,0.0,0.0,1.0,0.0,0.0,,4,0.2197761665318269,False,Small transfer/storage
+O'Toole Composting Limited - W0284,2021,1006.48,7.0,4.0,0.0,0.0,1.0,0.0,0.0,,4,0.21749291600980886,False,Small transfer/storage
+O'Toole Composting Limited - W0284,2022,1141.34,7.0,4.0,0.0,0.0,1.0,0.0,0.0,,4,0.21835360355027822,False,Small transfer/storage
+O'Toole Composting Limited - W0284,2023,2481.8599999999997,8.0,5.0,0.0,0.0,1.0,0.0,0.0,,1,0.22675140752070777,False,Transfer/storage
+O'Toole Composting Limited - W0284,2024,8369.52,9.0,5.0,0.0,0.0,1.0,0.0,0.0,,1,0.22404077466456557,False,Transfer/storage
+O'Toole Composting Limited - W0284,2025,8546.85,12.0,6.0,0.0,0.0,1.0,0.0,0.0,,1,0.22398014974989072,False,Transfer/storage
+Oxigen Environmental  (Merrywell) - W0208,2023,80.58,3.0,2.0,0.0,0.0,1.0,0.0,0.0,,4,0.20880827024648807,False,Small transfer/storage
+Oxigen Environmental  (Merrywell) - W0208,2024,8320.0,2.0,1.0,0.0,0.0,1.0,0.0,0.0,,4,0.1757956271869967,False,Small transfer/storage
+Oxigen Environmental  Unlimited Company (Robinhood) - W0152,2021,27064.190000000002,7.0,3.0,0.0,0.0,1.0,0.0,0.0,,1,0.2063521285288341,False,Transfer/storage
+Oxigen Environmental  Unlimited Company (Robinhood) - W0152,2022,10318.7,12.0,7.0,0.0,0.0,1.0,0.0,0.0,,1,0.22623434437314033,False,Transfer/storage
+Oxigen Environmental  Unlimited Company (Robinhood) - W0152,2023,6319.189999999999,9.0,6.0,0.0,0.0,1.0000000000000002,0.0,0.0,,1,0.22630452385844807,False,Transfer/storage
+Oxigen Environmental  Unlimited Company (Robinhood) - W0152,2024,9691.062,11.0,6.0,0.0,0.0,1.0,0.0,0.0,,1,0.22348092831074579,False,Transfer/storage
+Oxigen Environmental  Unlimited Company (Robinhood) - W0152,2025,14764.141,20.0,6.0,0.0,0.0,1.0,0.0,0.0,,1,0.20138760789098997,False,Transfer/storage
+Oxigen Environmental (Coes Road) - W0144,2021,27051.725,13.0,4.0,0.0,0.0,1.0,0.0,0.0,,1,0.20596439612742823,False,Transfer/storage
+Oxigen Environmental (Coes Road) - W0144,2022,31559.8,16.0,5.0,0.0,0.0,1.0,0.0,0.0,,1,0.19971677593210002,False,Transfer/storage
+Oxigen Environmental (Coes Road) - W0144,2023,36861.979,19.0,6.0,0.0,0.0,1.0,0.0,0.0,,1,0.19247711538475087,False,Transfer/storage
+Oxigen Environmental (Coes Road) - W0144,2024,43748.48,14.0,7.0,0.0,0.0,1.0,0.0,0.0,,1,0.21221120821395728,False,Transfer/storage
+Oxigen Environmental (Coes Road) - W0144,2025,60564.818,17.0,7.0,0.0,0.0,1.0,0.0,0.0,,1,0.19601290716598624,False,Transfer/storage
+P Carney Limited - P0402,2021,2638.0,4.0,2.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.20364467343904163,False,Recycler/Recovery
+P Carney Limited - P0402,2022,2448.0,4.0,2.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.20364467343904163,False,Recycler/Recovery
+P Carney Limited - P0402,2023,2194.73,4.0,2.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.20352791033593476,False,Recycler/Recovery
+P Carney Limited - P0402,2024,2628.94,4.0,2.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.20364467343904163,False,Recycler/Recovery
+P Carney Limited - P0402,2025,2936.8,4.0,2.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.20356038551529737,False,Recycler/Recovery
+Padraig Thornton Waste Disposal Limited - W0227,2021,17167.614999999998,19.0,9.0,0.0,0.0,1.0,0.0,0.0,,1,0.19927551569483015,False,Transfer/storage
+Padraig Thornton Waste Disposal Limited - W0227,2022,23578.253,19.0,8.0,0.0,0.0,1.0000000000000002,0.0,0.0,,1,0.19948932948072057,False,Transfer/storage
+Padraig Thornton Waste Disposal Limited - W0227,2023,59012.539000000004,18.0,9.0,0.0,0.0,0.9999999999999999,0.0,0.0,,1,0.18913657196961509,False,Transfer/storage
+Padraig Thornton Waste Disposal Limited - W0227,2024,67829.897,15.0,8.0,0.0,0.0,1.0,0.0,0.0,,1,0.19460977925019246,False,Transfer/storage
+Padraig Thornton Waste Disposal Limited - W0227,2025,81441.231,19.0,12.0,0.0,0.0,1.0,0.0,0.0,,1,0.16126685302035504,False,Transfer/storage
+Padraig Thornton Waste Disposal Ltd - W0206,2021,8371.409,16.0,9.0,0.0,0.0,1.0,0.0,0.0,,1,0.21667204099145349,False,Transfer/storage
+Padraig Thornton Waste Disposal Ltd - W0206,2022,8803.060000000001,15.0,7.0,0.0,0.0,1.0,0.0,0.0,,1,0.22205293202398435,False,Transfer/storage
+Padraig Thornton Waste Disposal Ltd - W0206,2023,17774.96,17.0,11.0,0.0,0.0,1.0,0.0,0.0,,1,0.19833719032314645,False,Transfer/storage
+Padraig Thornton Waste Disposal Ltd - W0206,2024,20881.47,13.0,8.0,0.0,0.0,1.0,0.0,0.0,,1,0.21683668871893452,False,Transfer/storage
+Padraig Thornton Waste Disposal Ltd - W0206,2025,7735.926,13.0,9.0,0.0,0.0,1.0,0.0,0.0,,1,0.22226749633857296,False,Transfer/storage
+Powerstown Landfill Site - W0025,2021,84.32000000000001,4.0,2.0,0.0,0.0,1.0,0.0,0.0,,4,0.20984796690601254,False,Small transfer/storage
+Powerstown Landfill Site - W0025,2022,57.879999999999995,4.0,2.0,0.0,0.0,1.0,0.0,0.0,,4,0.2062585773577365,False,Small transfer/storage
+Powerstown Landfill Site - W0025,2023,94.225,4.0,2.0,0.0,0.0,1.0,0.0,0.0,,4,0.20984796690601254,False,Small transfer/storage
+Powerstown Landfill Site - W0025,2024,118.565,4.0,2.0,0.0,0.0,1.0,0.0,0.0,,4,0.2098479669060126,False,Small transfer/storage
+Powerstown Landfill Site - W0025,2025,124.99,4.0,2.0,0.0,0.0,1.0,0.0,0.0,,4,0.21039161457090066,False,Small transfer/storage
+Raffeen Landfill Site - W0023,2021,288.46000000000004,6.0,3.0,0.0,0.0,1.0,0.0,0.0,,4,0.21623368912076796,False,Small transfer/storage
+Raffeen Landfill Site - W0023,2022,262.44000000000005,6.0,3.0,0.0,0.0,1.0,0.0,0.0,,4,0.21737233651381066,False,Small transfer/storage
+Raffeen Landfill Site - W0023,2023,373.14,6.0,4.0,0.0,0.0,1.0,0.0,0.0,,4,0.2136823583237356,False,Small transfer/storage
+Raffeen Landfill Site - W0023,2024,317.71000000000004,6.0,3.0,0.0,0.0,1.0,0.0,0.0,,4,0.216745583961523,False,Small transfer/storage
+Raffeen Landfill Site - W0023,2025,302.88,6.0,3.0,0.0,0.0,1.0,0.0,0.0,,4,0.21661463583741802,False,Small transfer/storage
+Rathroeen Landfill - W0067,2021,0.0,3.0,3.0,0.0,0.0,0.0,0.0,0.0,,4,0.09777461612824584,False,Small transfer/storage
+Rathroeen Landfill - W0067,2022,0.0,3.0,3.0,0.0,0.0,0.0,0.0,0.0,,4,0.09777461612824584,False,Small transfer/storage
+Rathroeen Landfill - W0067,2023,0.0,3.0,3.0,0.0,0.0,0.0,0.0,0.0,,4,0.09777461612824584,False,Small transfer/storage
+Rathroeen Landfill - W0067,2024,0.0,3.0,3.0,0.0,0.0,0.0,0.0,0.0,,4,0.09777461612824584,False,Small transfer/storage
+Rathroeen Landfill - W0067,2025,0.0,6.0,4.0,0.0,0.0,0.0,0.0,0.0,,4,0.0854457470770007,False,Small transfer/storage
+Ray Whelan Ltd - W0158,2021,1660.0,7.0,3.0,0.0,0.0,1.0,0.0,0.0,,4,0.2215968009418544,False,Small transfer/storage
+Ray Whelan Ltd - W0158,2022,1738.9099999999999,5.0,2.0,0.0,0.0,1.0,0.0,0.0,,4,0.21094648732801935,False,Small transfer/storage
+Ray Whelan Ltd - W0158,2023,1596.89,7.0,4.0,0.0,0.0,1.0,0.0,0.0,,4,0.22348929220011293,False,Small transfer/storage
+Ray Whelan Ltd - W0158,2024,1983.12,7.0,3.0,0.0,0.0,1.0,0.0,0.0,,4,0.2223594819512139,False,Small transfer/storage
+Ray Whelan Ltd - W0158,2025,1787.0,8.0,4.0,0.0,0.0,1.0,0.0,0.0,,4,0.2229372963062401,False,Small transfer/storage
+Recycling Centre and Waste Transfer Station - W0200,2021,176.32000000000002,6.0,3.0,0.0,0.6740018148820326,0.3259981851179673,0.0,0.0,0.0,3,0.007192737179951725,False,Disposal/Landfill
+Recycling Centre and Waste Transfer Station - W0200,2022,183.44,6.0,3.0,0.0,0.0,1.0,0.0,0.0,,4,0.2165543056090487,False,Small transfer/storage
+Recycling Centre and Waste Transfer Station - W0200,2023,201.04,6.0,3.0,0.0,0.0,1.0,0.0,0.0,,4,0.21627633744075392,False,Small transfer/storage
+Recycling Centre and Waste Transfer Station - W0200,2024,220.54,6.0,3.0,0.0,0.0,1.0,0.0,0.0,,4,0.21536981981712272,False,Small transfer/storage
+Recycling Centre and Waste Transfer Station - W0200,2025,212.3,6.0,3.0,0.0,0.0,1.0,0.0,0.0,,4,0.21536981981712272,False,Small transfer/storage
+Rilta Environmental - W0185,2021,6072.274,13.0,6.0,0.0,0.9861875468728848,0.013812453127115144,0.0,0.9924354533408736,0.0,3,-0.024983726443747134,True,Disposal/Landfill
+Rilta Environmental - W0185,2022,5661.136,16.0,8.0,0.0,0.9787214085653478,0.021278591434651984,0.0,0.9858341152729767,0.0,3,-0.05589443871827038,True,Disposal/Landfill
+Rilta Environmental - W0185,2023,5988.5,12.0,5.0,0.0,0.9884314936962512,0.011568506303748853,0.0,0.9919629289471487,0.0,3,-0.014611046339731648,True,Disposal/Landfill
+Rilta Environmental - W0185,2024,6111.461,8.0,3.0,0.0,0.995043411059974,0.004956588940025961,0.0,0.995043411059974,0.0,3,-8.716760193183681e-05,True,Disposal/Landfill
+Rilta Environmental - W0185,2025,10331.806999999999,11.0,4.0,0.0,0.9977673798978244,0.0022326201021757378,0.0,0.9979274680605243,0.0,3,-0.002374504599938043,True,Disposal/Landfill
+Roscommon Landfill Facility - W0073,2023,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,,4,0.14594567740689113,False,Small transfer/storage
+Roscommon Landfill Facility - W0073,2024,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,,4,0.14594567740689113,False,Small transfer/storage
+"SRCL Limited (Kylemore Road) trading as Eco-Safe Systems Ltd, Allied Industrial Estate, Kylemore Road, Dublin 10 - W0054",2021,9.058,2.0,1.0,0.0,0.0,1.0,0.0,1.0,,4,0.013345215573112301,False,Small transfer/storage
+"SRCL Limited (Kylemore Road) trading as Eco-Safe Systems Ltd, Allied Industrial Estate, Kylemore Road, Dublin 10 - W0054",2022,3.46,6.0,3.0,0.0,0.0,1.0,0.0,0.9277456647398844,,4,0.024817421993264754,False,Small transfer/storage
+"SRCL Limited (Kylemore Road) trading as Eco-Safe Systems Ltd, Allied Industrial Estate, Kylemore Road, Dublin 10 - W0054",2023,10.591,4.0,2.0,0.0,0.0,1.0,0.0,0.9809272023416108,,4,0.025775055011464154,False,Small transfer/storage
+"SRCL Limited (Kylemore Road) trading as Eco-Safe Systems Ltd, Allied Industrial Estate, Kylemore Road, Dublin 10 - W0054",2024,0.254,2.0,1.0,0.0,0.0,1.0,0.0,0.0,,4,0.13830301167231746,False,Small transfer/storage
+SRCL Limited - W0055,2021,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,,4,0.14594567740689113,False,Small transfer/storage
+Saint-Gobain Construction Products (Ireland) Limited - P0519,2021,1922.0,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.20943225717448638,False,Recycler/Recovery
+Saint-Gobain Construction Products (Ireland) Limited - P0519,2022,2623.0,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.209697734796495,False,Recycler/Recovery
+Saint-Gobain Construction Products (Ireland) Limited - P0519,2023,3034.0,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.20919380514700037,False,Recycler/Recovery
+Saint-Gobain Construction Products (Ireland) Limited - P0519,2024,3085.0,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.20919380514700037,False,Recycler/Recovery
+Saint-Gobain Construction Products (Ireland) Limited - P0519,2025,3691.76,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.20885125226725176,False,Recycler/Recovery
+Scotch Corner Landfill - W0020,2021,75.71,3.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.1701239706298086,False,Recycler/Recovery
+Silliot Hill Landfill - W0014,2025,18.32,5.0,4.0,0.0,0.0,1.0,0.0,0.0,,4,0.1880737050057842,False,Small transfer/storage
+Soltec (Ireland) Limited - P1093,2021,3.0,2.0,1.0,0.0,0.0,1.0,0.0,1.0,,4,0.004783942499838267,False,Small transfer/storage
+Soltec (Ireland) Limited - P1093,2022,4.811,6.0,4.0,0.0,0.0,1.0,0.0,0.8678029515693203,,4,0.035064597119185525,False,Small transfer/storage
+Soltec (Ireland) Limited - P1093,2023,12.636,7.0,3.0,0.0,0.0,1.0,0.0,0.6251978474200697,,4,0.058941713567254306,False,Small transfer/storage
+Soltec (Ireland) Limited - P1093,2024,41.5,5.0,2.0,0.0,0.0,1.0,0.0,0.21927710843373494,,4,0.13860261025101517,False,Small transfer/storage
+Soltec (Ireland) Limited - P1093,2025,9.632,10.0,3.0,0.0,0.0,1.0,0.0,0.9998961794019934,,4,0.006541345484207373,False,Small transfer/storage
+Starrus Eco Holdings Limited (Ballymount) - W0039,2021,15095.98,18.0,12.0,0.0,0.0,1.0,0.0,0.0,,1,0.18484611356226804,False,Transfer/storage
+Starrus Eco Holdings Limited (Ballymount) - W0039,2022,23072.210000000003,16.0,12.0,0.0,0.0,0.9999999999999999,0.0,0.0,,1,0.19406441028693266,False,Transfer/storage
+Starrus Eco Holdings Limited (Ballymount) - W0039,2023,29352.656000000003,16.0,12.0,0.0,0.0,0.9999999999999999,0.0,0.0,,1,0.1900824590771577,False,Transfer/storage
+Starrus Eco Holdings Limited (Ballymount) - W0039,2024,32644.593,15.0,11.0,0.0,0.0,1.0,0.0,0.0,,1,0.19841785775990078,False,Transfer/storage
+Starrus Eco Holdings Limited (Ballymount) - W0039,2025,40090.06999999999,16.0,11.0,0.0,0.0,1.0000000000000002,0.0,0.0,,1,0.19511511954573846,False,Transfer/storage
+Starrus Eco Holdings Limited (Cappagh) - W0261,2021,215.02,6.0,6.0,0.0,0.0,1.0,0.0,0.0,,4,0.20348136831103175,False,Small transfer/storage
+Starrus Eco Holdings Limited (Cappagh) - W0261,2022,23.58,6.0,6.0,0.0,0.0,1.0,0.0,0.0,,4,0.18018391685700996,False,Small transfer/storage
+Starrus Eco Holdings Limited (Cappagh) - W0261,2023,126.83999999999999,3.0,3.0,0.0,0.0,1.0,0.0,0.0,,4,0.20612666142851072,False,Small transfer/storage
+Starrus Eco Holdings Limited (Cappagh) - W0261,2024,105.34,6.0,5.0,0.0,0.0,1.0,0.0,0.0,,4,0.20294548193589163,False,Small transfer/storage
+Starrus Eco Holdings Limited (Cappagh) - W0261,2025,3508.0,7.0,7.0,0.0,0.0,1.0,0.0,0.0,,1,0.21848283092203374,False,Transfer/storage
+"Starrus Eco Holdings Limited (Cookstown, Tallaght) - W0079",2024,1.3,1.0,1.0,0.0,0.0,1.0,0.0,0.0,,4,0.12728819273140707,False,Small transfer/storage
+Starrus Eco Holdings Limited (Dock Road) - W0082,2021,2845.9700000000003,13.0,8.0,0.0,0.0,1.0,0.0,0.0,,1,0.21944841870580917,False,Transfer/storage
+Starrus Eco Holdings Limited (Dock Road) - W0082,2022,2368.68,13.0,9.0,0.0,0.0,1.0,0.0,0.0,,1,0.21801150295907534,False,Transfer/storage
+Starrus Eco Holdings Limited (Dock Road) - W0082,2023,4308.0929,15.0,7.0,0.0,0.0,1.0,0.0,0.0,,1,0.2192377115378943,False,Transfer/storage
+Starrus Eco Holdings Limited (Dock Road) - W0082,2024,6600.268,17.0,12.0,0.0,0.0,1.0,0.0,0.0,,1,0.1853643808054214,False,Transfer/storage
+Starrus Eco Holdings Limited (Dock Road) - W0082,2025,7577.63,15.0,10.0,0.0,0.0,1.0,0.0,0.0,,1,0.20990559688378108,False,Transfer/storage
+Starrus Eco Holdings Limited (Fassaroe) - W0053,2021,10955.501,20.0,14.0,0.0,0.0,1.0,0.0,0.1360961036834372,,1,0.11089495629884477,False,Transfer/storage
+Starrus Eco Holdings Limited (Fassaroe) - W0053,2022,16960.2,20.0,14.0,0.0,0.0,1.0,0.0,0.07604214572941356,,1,0.12442669398317974,False,Transfer/storage
+Starrus Eco Holdings Limited (Fassaroe) - W0053,2023,19684.03,21.0,14.0,0.0,0.0,1.0,0.0,0.08358552593142766,,1,0.11990602237963138,False,Transfer/storage
+Starrus Eco Holdings Limited (Fassaroe) - W0053,2024,24898.382999999998,21.0,15.0,0.0,0.0,1.0,0.0,0.058322662961687116,,1,0.11268057304345952,False,Transfer/storage
+Starrus Eco Holdings Limited (Fassaroe) - W0053,2025,26857.36,21.0,15.0,0.0,0.0,1.0,0.0,0.07149771980566966,,1,0.11086952610463946,False,Transfer/storage
+Starrus Eco Holdings Limited (Gorey) - W0220,2021,299.38000000000005,10.0,7.0,0.0,0.0,0.9999999999999998,0.0,0.0,,1,0.20774128612485465,False,Transfer/storage
+Starrus Eco Holdings Limited (Gorey) - W0220,2022,792.62,10.0,5.0,0.0,0.0,1.0,0.0,0.0,,4,0.21957642251132142,False,Small transfer/storage
+Starrus Eco Holdings Limited (Gorey) - W0220,2023,1506.561,8.0,6.0,0.0,0.0,1.0,0.0,0.0,,1,0.2233774633295435,False,Transfer/storage
+Starrus Eco Holdings Limited (Gorey) - W0220,2024,3394.95,10.0,8.0,0.0,0.0,1.0,0.0,0.0,,1,0.21887559315542598,False,Transfer/storage
+Starrus Eco Holdings Limited (Gorey) - W0220,2025,4974.56,7.0,6.0,0.0,0.0,1.0,0.0,0.0,,1,0.2229332468682052,False,Transfer/storage
+Starrus Eco Holdings Limited (Greenogue) - W0188,2021,3086.44,9.0,7.0,0.0,0.0,1.0,0.0,0.0,,1,0.2230238430397698,False,Transfer/storage
+Starrus Eco Holdings Limited (Greenogue) - W0188,2022,10913.640000000001,18.0,13.0,0.0,0.0,0.9999999999999998,0.0,0.0,,1,0.16967640441013399,False,Transfer/storage
+Starrus Eco Holdings Limited (Greenogue) - W0188,2023,11115.501,15.0,13.0,0.0,0.0,1.0,0.0,0.0,,1,0.17762802005689932,False,Transfer/storage
+Starrus Eco Holdings Limited (Greenogue) - W0188,2024,12191.55,12.0,11.0,0.0,0.0,1.0,0.0,0.0,,1,0.20250021255746148,False,Transfer/storage
+Starrus Eco Holdings Limited (Greenogue) - W0188,2025,14286.509999999998,15.0,11.0,0.0,0.0,1.0,0.0,0.0,,1,0.20187383549076854,False,Transfer/storage
+Starrus Eco Holdings Limited (Millenium Business Park) - W0183,2021,27926.280000000002,23.0,14.0,0.0,0.0,1.0,0.0,0.0,,1,0.14451626486903058,False,Transfer/storage
+Starrus Eco Holdings Limited (Millenium Business Park) - W0183,2022,35702.46,24.0,16.0,0.0,0.0,1.0,0.0,0.0,,1,0.09960550870715468,False,Transfer/storage
+Starrus Eco Holdings Limited (Millenium Business Park) - W0183,2023,39363.770000000004,27.0,16.0,0.0,0.0,1.0,0.0,0.0,,1,0.07084135166975258,False,Transfer/storage
+Starrus Eco Holdings Limited (Millenium Business Park) - W0183,2024,60960.472,22.0,16.0,0.0,0.0,1.0,0.0,0.0,,1,0.1011438798662963,False,Transfer/storage
+Starrus Eco Holdings Limited (Millenium Business Park) - W0183,2025,73225.82999999999,26.0,16.0,0.0,0.0,1.0000000000000002,0.0,0.0,,1,0.06998181019690819,False,Transfer/storage
+Starrus Eco Holdings Limited (Munster) - W0136,2021,4601.88,21.0,11.0,0.0,0.0,1.0,0.0,0.0,,1,0.17841861773342427,False,Transfer/storage
+Starrus Eco Holdings Limited (Munster) - W0136,2022,3817.8235,20.0,11.0,0.0,0.0,0.9999999999999999,0.0,0.0,,1,0.17919088217699813,False,Transfer/storage
+Starrus Eco Holdings Limited (Munster) - W0136,2023,4726.840200000001,20.0,12.0,0.0,0.0,1.0,0.0,0.0,,1,0.1737481147738713,False,Transfer/storage
+Starrus Eco Holdings Limited (Munster) - W0136,2024,6919.670099999999,15.0,10.0,0.0,0.0,1.0,0.0,0.0,,1,0.21089839928206427,False,Transfer/storage
+Starrus Eco Holdings Limited (Munster) - W0136,2025,10740.43,16.0,12.0,0.0,0.0,1.0,0.0,0.0,,1,0.19503493125491822,False,Transfer/storage
+Starrus Eco Holdings Limited (Slane) - W0140,2021,49816.82,21.0,13.0,0.9838118932521184,0.0,0.01618810674788154,0.0,0.0,1.0,0,0.05805107934576215,False,Recycler/Recovery
+Starrus Eco Holdings Limited (Slane) - W0140,2022,28116.7,21.0,15.0,0.0,0.0,1.0,0.0,0.0,,1,0.14333789121156704,False,Transfer/storage
+Starrus Eco Holdings Limited (Slane) - W0140,2023,24292.92,17.0,14.0,0.0,0.0,1.0,0.0,0.0,,1,0.1643868476699103,False,Transfer/storage
+Starrus Eco Holdings Limited (Slane) - W0140,2024,27956.881,14.0,11.0,0.0,0.0,1.0,0.0,0.0,,1,0.20005844629042874,False,Transfer/storage
+Starrus Eco Holdings Limited (Slane) - W0140,2025,32794.520000000004,18.0,13.0,3.903091126200352e-05,0.0,0.9999609690887378,0.0,0.0,1.0,1,0.1347063861232698,False,Transfer/storage
+Starrus Eco Holdings Limited (Sligo) - W0058,2021,328.865,4.0,3.0,0.0,0.0,1.0,0.0,0.0,,4,0.21134811550072324,False,Small transfer/storage
+Starrus Eco Holdings Limited (Sligo) - W0058,2022,197.1,3.0,2.0,0.0,0.0,1.0,0.0,0.0,,4,0.2086696582644315,False,Small transfer/storage
+Starrus Eco Holdings Limited (Sligo) - W0058,2023,316.74100000000004,3.0,3.0,0.0,0.0,1.0,0.0,0.0,,4,0.21046140732966473,False,Small transfer/storage
+Starrus Eco Holdings Limited (Sligo) - W0058,2024,1166.0839999999998,7.0,6.0,0.0,0.0,1.0,0.0,0.0,,1,0.21977929263049434,False,Transfer/storage
+Starrus Eco Holdings Limited (Sligo) - W0058,2025,2797.16,5.0,5.0,0.0,0.0,1.0,0.0,0.0,,1,0.20725568660264237,False,Transfer/storage
+Starrus Eco Holdings Limited (Waterford City) - W0177,2021,2461.121,11.0,10.0,0.0,0.0,1.0,0.0,0.0,,1,0.20029324707252655,False,Transfer/storage
+Starrus Eco Holdings Limited (Waterford City) - W0177,2022,2315.8,15.0,10.0,0.0,0.0,1.0,0.0,0.0,,1,0.2015211027108869,False,Transfer/storage
+Starrus Eco Holdings Limited (Waterford City) - W0177,2023,4737.976,13.0,11.0,0.0,0.0,1.0,0.0,0.0,,1,0.19884403689075747,False,Transfer/storage
+Starrus Eco Holdings Limited (Waterford City) - W0177,2024,7982.84,16.0,11.0,0.0,0.0,1.0,0.0,0.0,,1,0.20183015489201067,False,Transfer/storage
+Starrus Eco Holdings Limited (Waterford City) - W0177,2025,7538.43,15.0,10.0,0.0,0.0,1.0,0.0,0.0,,1,0.20990559688378108,False,Transfer/storage
+Ted O'Donoghue and Sons Limited - W0214,2021,6313.0,9.0,5.0,0.0,0.0,1.0,0.0,0.0,,1,0.22528421850314562,False,Transfer/storage
+Ted O'Donoghue and Sons Limited - W0214,2022,6450.0,10.0,6.0,0.0,0.0,1.0,0.0,0.0,,1,0.22497219010164582,False,Transfer/storage
+Ted O'Donoghue and Sons Limited - W0214,2023,5462.0,10.0,6.0,0.0,0.0,1.0,0.0,0.0,,1,0.22594023638249539,False,Transfer/storage
+Ted O'Donoghue and Sons Limited - W0214,2024,4536.0,10.0,7.0,0.0,0.0,1.0,0.0,0.0,,1,0.22632212540954894,False,Transfer/storage
+Ted O'Donoghue and Sons Limited - W0214,2025,4250.0,9.0,5.0,0.0,0.0,1.0,0.0,0.0,,1,0.22544496769025735,False,Transfer/storage
+The City Bin Co. Unlimited Company - W0148,2021,82.82,4.0,2.0,0.0,0.0,1.0,0.0,0.0,,4,0.20984796690601254,False,Small transfer/storage
+The City Bin Co. Unlimited Company - W0148,2022,72.5,3.0,2.0,0.0,0.0,1.0,0.0,0.0,,4,0.20619573545624964,False,Small transfer/storage
+The City Bin Co. Unlimited Company - W0148,2023,8.13,3.0,2.0,0.0,0.0,1.0,0.0,0.0,,4,0.18968709581540266,False,Small transfer/storage
+The City Bin Co. Unlimited Company - W0148,2024,1052.26,5.0,4.0,0.0,0.0,1.0,0.0,0.0,,4,0.2092095601609616,False,Small transfer/storage
+The City Bin Co. Unlimited Company - W0148,2025,3120.107,18.0,9.0,0.0,0.0,1.0,0.0,0.0,,1,0.1995569121093902,False,Transfer/storage
+The Hammond Lane Metal Company Limited - P0997,2021,9821.986,6.0,6.0,0.9875448814526919,0.0,0.012455118547308049,0.0,0.0,1.0,0,0.16238116739143366,False,Recycler/Recovery
+The Hammond Lane Metal Company Limited - P0997,2022,10295.456999999999,11.0,6.0,0.9541146157960739,0.0,0.04588538420392607,0.0,0.0,1.0,0,0.12750946552293546,False,Recycler/Recovery
+The Hammond Lane Metal Company Limited - P0997,2023,12229.638,12.0,7.0,0.0,0.0,1.0,0.0,0.0,,1,0.22430575918254664,False,Transfer/storage
+The Hammond Lane Metal Company Limited - P0997,2024,13596.690999999999,12.0,6.0,0.9667947885261201,0.0,0.033205211473879934,0.0,0.0,1.0,0,0.14133770765812187,False,Recycler/Recovery
+The Hammond Lane Metal Company Limited - P0997,2025,12100.749,12.0,6.0,0.0,0.0,1.0,0.0,0.0,,1,0.22296150755988953,False,Transfer/storage
+The Hammond Lane Metal Company Limited - P1002,2021,56962.388999999996,8.0,6.0,0.9356753453581451,0.0,0.064324654641855,0.0,0.0,1.0,0,0.1196386573860912,False,Recycler/Recovery
+The Hammond Lane Metal Company Limited - P1002,2022,54309.862,14.0,6.0,0.9718654228950168,0.0,0.028134577104983256,0.0,0.0,1.0,0,0.14515032765166697,False,Recycler/Recovery
+The Hammond Lane Metal Company Limited - P1002,2023,50323.234,15.0,6.0,0.9777810583477207,0.0,0.022218941652279348,0.0,0.0,1.0,0,0.14944049544497168,False,Recycler/Recovery
+The Hammond Lane Metal Company Limited - P1002,2024,37656.770000000004,12.0,6.0,0.9874351145889569,0.0,0.012564885411042954,0.0,0.0,1.0,0,0.1631871775287413,False,Recycler/Recovery
+The Hammond Lane Metal Company Limited - P1002,2025,37368.664000000004,14.0,6.0,0.0,0.0,1.0,0.0,0.0,,1,0.20728528302541838,False,Transfer/storage
+Thorntons Recycling Centre (Ballyfermot) - W0044,2021,3973.7299999999996,13.0,9.0,0.0,0.0,1.0,0.0,0.0,,1,0.22080907147665402,False,Transfer/storage
+Thorntons Recycling Centre (Ballyfermot) - W0044,2022,18804.522,10.0,8.0,0.0,0.0,0.9999999999999998,0.0,0.0,,1,0.20910149490371732,False,Transfer/storage
+Thorntons Recycling Centre (Ballyfermot) - W0044,2023,54660.662,17.0,12.0,0.0,0.0,1.0,0.0,0.0,,1,0.1795042242136508,False,Transfer/storage
+Thorntons Recycling Centre (Ballyfermot) - W0044,2024,57627.062000000005,15.0,12.0,0.0,0.0,1.0,0.0,0.0,,1,0.17960829451719001,False,Transfer/storage
+Thorntons Recycling Centre (Ballyfermot) - W0044,2025,68153.38500000001,16.0,13.0,0.0,0.0,1.0,0.0,0.0,,1,0.16166046431732778,False,Transfer/storage
+Tulligmore Quarry Solutions Limited - W0255,2022,46125.86,3.0,1.0,0.5,0.5,0.0,0.0,0.0,0.5,0,0.06026490594616718,False,Recycler/Recovery
+Tulligmore Quarry Solutions Limited - W0255,2023,443334.12,21.0,2.0,0.0,1.0,0.0,0.0,0.0,0.0,3,0.025025692719495618,False,Disposal/Landfill
+Tulligmore Quarry Solutions Limited - W0255,2024,552791.02,41.0,2.0,1.0,0.0,0.0,1.0,0.0,1.0,2,0.07607708512449307,False,Recycler/Recovery
+Tulligmore Quarry Solutions Limited - W0255,2025,455291.73600000003,58.0,3.0,1.0,0.0,0.0,0.999975180748723,0.0,1.0,2,0.05549112681749091,False,Recycler/Recovery
+Valcroft Unlimited Company - P1136,2025,2993.94,5.0,3.0,0.0,0.0,1.0,0.0,0.0,,4,0.214497541695927,False,Small transfer/storage
+"Veolia Environmental Services Technical Solutions Ltd, Corrin, Fermoy, Cork - W0050",2021,88.35,6.0,4.0,0.0,0.9037917374080362,0.09620826259196379,0.0,1.0,0.0,3,-0.038366011153976864,True,Disposal/Landfill
+"Veolia Environmental Services Technical Solutions Ltd, Corrin, Fermoy, Cork - W0050",2022,109.4,8.0,4.0,0.0,1.0,0.0,0.0,1.0,0.0,3,0.02531287052491682,False,Disposal/Landfill
+"Veolia Environmental Services Technical Solutions Ltd, Corrin, Fermoy, Cork - W0050",2023,71.326,7.0,4.0,0.0,1.0,0.0,0.0,0.9962846647786221,0.0,3,0.021161724908403512,False,Disposal/Landfill
+"Veolia Environmental Services Technical Solutions Ltd, Corrin, Fermoy, Cork - W0050",2024,0.841,4.0,3.0,0.0,1.0,0.0,0.0,0.6860879904875148,0.0,3,-0.0035986865084556285,True,Disposal/Landfill
+"Veolia Environmental Services Technical Solutions Ltd, Corrin, Fermoy, Cork - W0050",2025,17.16,4.0,2.0,0.0,1.0,0.0,0.0,1.0,0.0,3,0.016022560019695264,False,Disposal/Landfill
+Walshestown Restoration Limited - W0254,2021,637312.196,62.0,3.0,1.0,0.0,0.0,1.0,0.0,1.0,2,0.04372110827731357,False,Recycler/Recovery
+Walshestown Restoration Limited - W0254,2022,505948.94000000006,74.0,5.0,1.0,0.0,0.0,0.989755408915374,0.0,1.0,2,0.0029970472539887494,False,Recycler/Recovery
+Walshestown Restoration Limited - W0254,2023,596507.9360000001,75.0,6.0,1.0,0.0,0.0,1.0,0.0,1.0,2,0.0038102743151096075,False,Recycler/Recovery
+Walshestown Restoration Limited - W0254,2024,347790.08999999997,47.0,3.0,1.0,0.0,0.0,0.9983604478206956,0.0,1.0,2,0.06690456280190249,False,Recycler/Recovery
+Walshestown Restoration Limited - W0254,2025,629878.2760000001,80.0,3.0,0.18429712600534262,0.0,0.8157028739946572,0.0002974542973442697,0.0,1.0,1,-0.046084787312876574,True,Transfer/storage
+Waste Recovery Services (Fermoy) Limited - W0107,2022,4191.3,11.0,7.0,0.1368358265931811,0.0,0.863164173406819,0.09163743945792474,0.0,1.0,1,0.0341571588695746,False,Transfer/storage
+Waste Recovery Services (Fermoy) Limited - W0107,2023,7547.54,10.0,8.0,0.11757473295934834,0.0,0.8824252670406517,0.0,0.0,1.0,1,0.09826293129873936,False,Transfer/storage
+Youghal Landfill - W0068,2021,10.96,1.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.14476345374155591,False,Recycler/Recovery
+Youghal Landfill - W0068,2022,10.56,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.1716163575804439,False,Recycler/Recovery
+Youghal Landfill - W0068,2023,4.84,2.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,2,0.07591824432445804,False,Recycler/Recovery
+Youghal Landfill - W0068,2024,7.08,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.16963294478150426,False,Recycler/Recovery
+Youghal Landfill - W0068,2025,14.42,2.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0,0.1742002211131331,False,Recycler/Recovery
